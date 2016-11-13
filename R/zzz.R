@@ -1,0 +1,6 @@
+Rcpp::loadModule("fffmodule", TRUE)
+Rcpp::loadModule("affmodule", TRUE)
+Rcpp::loadModule("fffcdmodule", TRUE)
+Rcpp::loadModule("affcdmodule", TRUE)
+Rcpp::loadModule("cusumcdmodule", TRUE)
+Rcpp::loadModule("ewmacdmodule", TRUE)

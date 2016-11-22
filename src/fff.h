@@ -1,16 +1,17 @@
 #ifndef GUARD_fff_h
 #define GUARD_fff_h
 
-#include<Rcpp.h>
-#include<vector>
+#include "utils.h"
+//#include<Rcpp.h>
+//#include<vector>
 
-const double LAMBDA_NO_FORGETTING = 1.0;
-const double INIT_XBAR = 0.0;
-const double INIT_S2 = 0.0;
-const double INIT_M = 0.0;
-const double INIT_W = 0.0;
-const double INIT_U = 0.0;
-const double INIT_V = 0.0;
+// const double LAMBDA_NO_FORGETTING = 1.0;
+// const double INIT_XBAR = 0.0;
+// const double INIT_S2 = 0.0;
+// const double INIT_M = 0.0;
+// const double INIT_W = 0.0;
+// const double INIT_U = 0.0;
+// const double INIT_V = 0.0;
 
 //-----------------------------------------------------------------------//
 

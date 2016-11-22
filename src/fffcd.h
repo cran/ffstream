@@ -2,9 +2,9 @@
 #define GUARD_fffcd_h
 
 #include "detector.h"
-#include "fff.h"
-#include<Rcpp.h>
-#include<vector>
+//#include "fff.h"
+//#include<Rcpp.h>
+//#include<vector>
 
 
 //-----------------------------------------------------------------------//

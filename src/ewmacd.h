@@ -2,13 +2,13 @@
 #define GUARD_ewmacd_h
 
 #include "detector.h"
-#include "fff.h"
-#include<Rcpp.h>
-#include<vector>
+//#include "fff.h"
+//#include<Rcpp.h>
+//#include<vector>
 
-const double INIT_EWMA_Z = 0.0;
-const double INIT_EWMA_SIGMA_Z = 0.0;
-const double INIT_EWMA_RFACTOR_SIGMA_Z = 1.0;
+// const double INIT_EWMA_Z = 0.0;
+// const double INIT_EWMA_SIGMA_Z = 0.0;
+// const double INIT_EWMA_RFACTOR_SIGMA_Z = 1.0;
 
 //-----------------------------------------------------------------------//
 

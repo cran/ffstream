@@ -2,9 +2,9 @@
 #define GUARD_aff_h
 
 #include "fff.h"
-#include<Rcpp.h>
-#include<cmath>
-#include<vector>
+//#include<Rcpp.h>
+//#include<cmath>
+//#include<vector>
 
 //declare constants for AFF
 const double LAMBDA_MIN = 0.6;

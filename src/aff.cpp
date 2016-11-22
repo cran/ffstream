@@ -6,10 +6,10 @@
 //now can declare aff
 #include "aff.h"
 #include "utils.h"
-#include<Rcpp.h>
-#include<cmath>
-#include<vector>
-using std::vector;
+//#include<Rcpp.h>
+//#include<cmath>
+//#include<vector>
+//using std::vector;
 
 
 //---------------------------------------------------------------//
@@ -168,7 +168,7 @@ void AFF::processVector(Rcpp::NumericVector vec){
 }
  
 Rcpp::List AFF::processVectorSave(Rcpp::NumericVector vec){
-    vector<double> lambdasave(vec.size());
+    std::vector<double> lambdasave(vec.size());
     for (int i=0; i < vec.size(); i++){
         update(vec[i]);
         lambdasave[i] = lambda;

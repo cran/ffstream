@@ -2,8 +2,8 @@
 #define GUARD_detector_h
 
 #include "fff.h"
-#include<Rcpp.h>
-#include<vector>
+//#include<Rcpp.h>
+//#include<vector>
 
 class Detector{
     public:

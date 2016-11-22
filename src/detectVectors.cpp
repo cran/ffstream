@@ -2,7 +2,7 @@
 #define GUARD_detectvectors_cpp
 
 #include "detectVectors.h"
-#include<Rcpp.h>
+//#include<Rcpp.h>
 
 
 //---------------------------------------------------------------------//

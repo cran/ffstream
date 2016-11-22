@@ -1,10 +1,10 @@
 ---
-title: "ffstream 0.1.0"
+title: "ffstream 0.1.4"
 author: "Dean Bodenham"
 date: "12 November 2016"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{ffstream_0.1.4}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

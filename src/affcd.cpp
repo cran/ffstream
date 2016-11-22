@@ -5,8 +5,8 @@
 #include "fff.h"
 #include "aff.h"
 #include "utils.h"
-#include<Rcpp.h>
-#include<vector>
+//#include<Rcpp.h>
+//#include<vector>
 // using std::vector;
 
 

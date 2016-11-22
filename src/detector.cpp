@@ -2,7 +2,7 @@
 #define GUARD_detector_cpp
 
 #include "detector.h"
-#include "utils.h"
+//#include "utils.h"
 
 
 Detector::Detector() :

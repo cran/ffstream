@@ -3,10 +3,10 @@
 
 
 #include "cusumcd.h"
-#include "fff.h"
-#include<Rcpp.h>
-#include "utils.h"
-#include<vector>
+//#include "fff.h"
+//#include<Rcpp.h>
+//#include "utils.h"
+//#include<vector>
 
 
 //constructor

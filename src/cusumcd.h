@@ -2,12 +2,13 @@
 #define GUARD_cusumcd_h
 
 #include "detector.h"
-#include "fff.h"
-#include<Rcpp.h>
-#include<vector>
+//#include "fff.h"
+//#include "utils.h"
+//#include<Rcpp.h>
+//#include<vector>
 
-const double INIT_CUSUM_S = 0.0;
-const double INIT_CUSUM_T = 0.0;
+// const double INIT_CUSUM_S = 0.0;
+// const double INIT_CUSUM_T = 0.0;
 
 
 //-----------------------------------------------------------------------//

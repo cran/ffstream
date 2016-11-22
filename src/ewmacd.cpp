@@ -2,10 +2,10 @@
 #define GUARD_ewmacd_cpp
 
 #include "ewmacd.h"
-#include "fff.h"
-#include<Rcpp.h>
-#include "utils.h"
-#include<vector>
+//#include "fff.h"
+//#include<Rcpp.h>
+//#include "utils.h"
+//#include<vector>
 
 
 //constructor

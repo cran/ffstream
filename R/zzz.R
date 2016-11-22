@@ -1,3 +1,5 @@
+library(Rcpp)
+library(methods)
 Rcpp::loadModule("fffmodule", TRUE)
 Rcpp::loadModule("affmodule", TRUE)
 Rcpp::loadModule("fffcdmodule", TRUE)

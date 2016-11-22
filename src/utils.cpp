@@ -2,7 +2,7 @@
 #define GUARD_utils_cpp
 
 #include "utils.h"
-#include<Rcpp.h>
+//#include<Rcpp.h>
 
 //cmath not needed
 // #include<cmath>

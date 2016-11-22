@@ -1,5 +1,6 @@
 context("Test  7: initialisation of EWMA")
 
+library(Rcpp)
 test_that("init EWMA (r fails)", {
 
         expect_error(ewmacd1 <- initEWMAMeanCD(r="A", L=3.00, BL=50), " r ")

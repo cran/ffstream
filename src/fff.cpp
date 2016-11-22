@@ -3,9 +3,9 @@
 
 
 #include "fff.h"
-#include<Rcpp.h>
-#include<vector>
-using std::vector;
+//#include<Rcpp.h>
+//#include<vector>
+//using std::vector;
 
 //-----------------------------------------------------------------------//
 

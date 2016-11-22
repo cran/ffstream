@@ -1,6 +1,7 @@
 context("Test 10: EWMA change detection")
 
 
+library(Rcpp)
 changepointStr <<- "tauhat"
 
 test_that("EWMA change detection on stream 1", {
@@ -39,7 +40,7 @@ test_that("EWMA change detection on stream 2", {
 
 
 #now checking getting/setting BL (derived class!)
-test_that("checking BL", {
+test_that("checking BL 1", {
         r_3 <- 0.05
         L_3 <- 2.615
         BL3 <- 87
@@ -47,7 +48,13 @@ test_that("checking BL", {
 
         #default values
         expect_equal(ewma3$BL, 87)
+        })
 
+test_that("checking BL 2", {
+        r_3 <- 0.05
+        L_3 <- 2.615
+        BL3 <- 87
+        ewma3 <- initEWMAMeanCD(r = r_3, L = L_3, BL=BL3)
         #now change the BL
         ewma3$BL <- 100
         expect_equal(ewma3$BL, 100)

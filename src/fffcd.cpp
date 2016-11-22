@@ -4,9 +4,9 @@
 
 #include "fffcd.h"
 #include "fff.h"
-#include "utils.h"
-#include<Rcpp.h>
-#include<vector>
+//#include "utils.h"
+//#include<Rcpp.h>
+//#include<vector>
 // using std::vector;
 
 

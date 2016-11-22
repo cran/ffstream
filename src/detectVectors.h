@@ -8,7 +8,7 @@
 #include "affcd.h"
 #include "cusumcd.h"
 #include "ewmacd.h"
-#include<Rcpp.h>
+//#include<Rcpp.h>
 // #include<vector>
 
 

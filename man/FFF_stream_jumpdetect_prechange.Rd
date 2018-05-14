@@ -62,4 +62,3 @@ Original implementation in R of FFF change detector, but now prechange is
 known
 }
 \keyword{internal}
-

@@ -16,4 +16,3 @@ Wrapper function to combine two p-values into a single p-value.
 Uses a type of 'reverse Bonferroni'.
 }
 \keyword{internal}
-

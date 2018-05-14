@@ -18,4 +18,3 @@ factor, returns the value of the fixed forgetting factor mean
 Algorithm is implemented in C++.
 }
 \keyword{internal}
-

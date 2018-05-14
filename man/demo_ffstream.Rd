@@ -67,6 +67,7 @@ streams using adaptive estimation}.
 Statistics and Computing  
 doi:10.1007/s11222-016-9684-8
 }
+
 \examples{
 df <- demo_ffstream()
 
@@ -76,4 +77,3 @@ demo_ffstream(showPlot=TRUE)
 
 
 }
-

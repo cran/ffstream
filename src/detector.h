@@ -21,6 +21,9 @@ class Detector{
         void setStreamEstMean(double);
         double getStreamEstSigma();
         void setStreamEstSigma(double);
+        //NEW: adding Sq variables
+        double getStreamEstSigmaSq();
+        void setStreamEstSigmaSq(double);
         double getPval();
         void setPval(double);
         bool getChangeDetected();
@@ -40,12 +43,16 @@ class Detector{
         bool changeDetected;
         FFF streamEstimator;
         void setStreamEstMean();
-        void setStreamEstSigma();
+        //Note: Removing this function for setting Sigma, only
+        //will allow setting SigmaSq, to avoid needing square root function
+        //void setStreamEstSigma();
+        void setStreamEstSigmaSq();
         void stopBurnIn();
         void startBurnIn();
     private:
         double streamEstMean;
         double streamEstSigma;
+        double streamEstSigmaSq;
 
 //     private:
 };

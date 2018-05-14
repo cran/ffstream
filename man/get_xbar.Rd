@@ -15,4 +15,3 @@ get_xbar(m, w)
 Function to calculate \code{xbar} from \code{m} and \code{w}
 }
 \keyword{internal}
-

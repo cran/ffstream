@@ -24,7 +24,7 @@
 #' 
 #' @keywords internal
 cpp_detectFFFMeanMultiple <- function(x, lambda, alpha, BL) {
-    .Call('ffstream_cpp_detectFFFMeanMultiple', PACKAGE = 'ffstream', x, lambda, alpha, BL)
+    .Call(`_ffstream_cpp_detectFFFMeanMultiple`, x, lambda, alpha, BL)
 }
 
 #' Find the first changepoint in the mean using FFF
@@ -50,7 +50,7 @@ cpp_detectFFFMeanMultiple <- function(x, lambda, alpha, BL) {
 #' 
 #' @keywords internal
 cpp_detectFFFMeanSingle <- function(x, lambda, alpha, BL) {
-    .Call('ffstream_cpp_detectFFFMeanSingle', PACKAGE = 'ffstream', x, lambda, alpha, BL)
+    .Call(`_ffstream_cpp_detectFFFMeanSingle`, x, lambda, alpha, BL)
 }
 
 #' Find the first changepoint in the mean using FFF, assuming prechange known
@@ -78,7 +78,7 @@ cpp_detectFFFMeanSingle <- function(x, lambda, alpha, BL) {
 #' 
 #' @keywords internal
 cpp_detectFFFMeanSinglePrechange <- function(x, lambda, alpha, prechangeMean, prechangeSigma) {
-    .Call('ffstream_cpp_detectFFFMeanSinglePrechange', PACKAGE = 'ffstream', x, lambda, alpha, prechangeMean, prechangeSigma)
+    .Call(`_ffstream_cpp_detectFFFMeanSinglePrechange`, x, lambda, alpha, prechangeMean, prechangeSigma)
 }
 
 #' Search for multiple changepoints in the mean using AFF
@@ -104,7 +104,7 @@ cpp_detectFFFMeanSinglePrechange <- function(x, lambda, alpha, prechangeMean, pr
 #' 
 #' @keywords internal
 cpp_detectAFFMeanMultiple <- function(x, alpha, eta, BL) {
-    .Call('ffstream_cpp_detectAFFMeanMultiple', PACKAGE = 'ffstream', x, alpha, eta, BL)
+    .Call(`_ffstream_cpp_detectAFFMeanMultiple`, x, alpha, eta, BL)
 }
 
 #' Find the first changepoint in the mean using AFF
@@ -130,7 +130,7 @@ cpp_detectAFFMeanMultiple <- function(x, alpha, eta, BL) {
 #' 
 #' @keywords internal
 cpp_detectAFFMeanSingle <- function(x, alpha, eta, BL) {
-    .Call('ffstream_cpp_detectAFFMeanSingle', PACKAGE = 'ffstream', x, alpha, eta, BL)
+    .Call(`_ffstream_cpp_detectAFFMeanSingle`, x, alpha, eta, BL)
 }
 
 #' Find the first changepoint in the mean using AFF, assuming prechange known
@@ -158,7 +158,7 @@ cpp_detectAFFMeanSingle <- function(x, alpha, eta, BL) {
 #' 
 #' @keywords internal
 cpp_detectAFFMeanSinglePrechange <- function(x, alpha, eta, prechangeMean, prechangeSigma) {
-    .Call('ffstream_cpp_detectAFFMeanSinglePrechange', PACKAGE = 'ffstream', x, alpha, eta, prechangeMean, prechangeSigma)
+    .Call(`_ffstream_cpp_detectAFFMeanSinglePrechange`, x, alpha, eta, prechangeMean, prechangeSigma)
 }
 
 #' Search for multiple changepoints in the mean using CUSUM
@@ -196,7 +196,7 @@ cpp_detectAFFMeanSinglePrechange <- function(x, alpha, eta, prechangeMean, prech
 #' 
 #' @keywords internal
 cpp_detectCUSUMMeanMultiple <- function(x, k, h, BL) {
-    .Call('ffstream_cpp_detectCUSUMMeanMultiple', PACKAGE = 'ffstream', x, k, h, BL)
+    .Call(`_ffstream_cpp_detectCUSUMMeanMultiple`, x, k, h, BL)
 }
 
 #' Find the first changepoint in the mean using CUSUM
@@ -234,7 +234,7 @@ cpp_detectCUSUMMeanMultiple <- function(x, k, h, BL) {
 #' 
 #' @keywords internal
 cpp_detectCUSUMMeanSingle <- function(x, k, h, BL) {
-    .Call('ffstream_cpp_detectCUSUMMeanSingle', PACKAGE = 'ffstream', x, k, h, BL)
+    .Call(`_ffstream_cpp_detectCUSUMMeanSingle`, x, k, h, BL)
 }
 
 #' Find the first changepoint in the mean using CUSUM, assuming prechange 
@@ -273,7 +273,7 @@ cpp_detectCUSUMMeanSingle <- function(x, k, h, BL) {
 #' 
 #' @keywords internal
 cpp_detectCUSUMMeanSinglePrechange <- function(x, k, h, prechangeMean, prechangeSigma) {
-    .Call('ffstream_cpp_detectCUSUMMeanSinglePrechange', PACKAGE = 'ffstream', x, k, h, prechangeMean, prechangeSigma)
+    .Call(`_ffstream_cpp_detectCUSUMMeanSinglePrechange`, x, k, h, prechangeMean, prechangeSigma)
 }
 
 #' Search for multiple changepoints in the mean using EWMA
@@ -310,7 +310,7 @@ cpp_detectCUSUMMeanSinglePrechange <- function(x, k, h, prechangeMean, prechange
 #' 
 #' @keywords internal
 cpp_detectEWMAMeanMultiple <- function(x, r, L, BL) {
-    .Call('ffstream_cpp_detectEWMAMeanMultiple', PACKAGE = 'ffstream', x, r, L, BL)
+    .Call(`_ffstream_cpp_detectEWMAMeanMultiple`, x, r, L, BL)
 }
 
 #' Find the first changepoint in the mean using EWMA
@@ -347,7 +347,7 @@ cpp_detectEWMAMeanMultiple <- function(x, r, L, BL) {
 #' 
 #' @keywords internal
 cpp_detectEWMAMeanSingle <- function(x, r, L, BL) {
-    .Call('ffstream_cpp_detectEWMAMeanSingle', PACKAGE = 'ffstream', x, r, L, BL)
+    .Call(`_ffstream_cpp_detectEWMAMeanSingle`, x, r, L, BL)
 }
 
 #' Find the first changepoint in the mean using EWMA, assuming prechange 
@@ -385,7 +385,7 @@ cpp_detectEWMAMeanSingle <- function(x, r, L, BL) {
 #' 
 #' @keywords internal
 cpp_detectEWMAMeanSinglePrechange <- function(x, r, L, prechangeMean, prechangeSigma) {
-    .Call('ffstream_cpp_detectEWMAMeanSinglePrechange', PACKAGE = 'ffstream', x, r, L, prechangeMean, prechangeSigma)
+    .Call(`_ffstream_cpp_detectEWMAMeanSinglePrechange`, x, r, L, prechangeMean, prechangeSigma)
 }
 
 #' Compute the FFF mean of a vector
@@ -401,7 +401,7 @@ cpp_detectEWMAMeanSinglePrechange <- function(x, r, L, prechangeMean, prechangeS
 #' 
 #' @keywords internal
 cpp_computeFFFMean <- function(x, lambda) {
-    .Call('ffstream_cpp_computeFFFMean', PACKAGE = 'ffstream', x, lambda)
+    .Call(`_ffstream_cpp_computeFFFMean`, x, lambda)
 }
 
 #' Compute the AFF mean of a vector
@@ -418,30 +418,30 @@ cpp_computeFFFMean <- function(x, lambda) {
 #' 
 #' @keywords internal
 cpp_computeAFFMean <- function(x, eta) {
-    .Call('ffstream_cpp_computeAFFMean', PACKAGE = 'ffstream', x, eta)
+    .Call(`_ffstream_cpp_computeAFFMean`, x, eta)
 }
 
 computeOneSidedPvalueRcpp <- function(x_, a_, b_) {
-    .Call('ffstream_computeOneSidedPvalueRcpp', PACKAGE = 'ffstream', x_, a_, b_)
+    .Call(`_ffstream_computeOneSidedPvalueRcpp`, x_, a_, b_)
 }
 
 combineTwoOneSidedPvaluesRcpp <- function(p1_, p2_) {
-    .Call('ffstream_combineTwoOneSidedPvaluesRcpp', PACKAGE = 'ffstream', p1_, p2_)
+    .Call(`_ffstream_combineTwoOneSidedPvaluesRcpp`, p1_, p2_)
 }
 
 convertPvalueToCorrectSideRcpp <- function(p_) {
-    .Call('ffstream_convertPvalueToCorrectSideRcpp', PACKAGE = 'ffstream', p_)
+    .Call(`_ffstream_convertPvalueToCorrectSideRcpp`, p_)
 }
 
 computeTwoSidedPvalueRcpp <- function(x_, a_, b_) {
-    .Call('ffstream_computeTwoSidedPvalueRcpp', PACKAGE = 'ffstream', x_, a_, b_)
+    .Call(`_ffstream_computeTwoSidedPvalueRcpp`, x_, a_, b_)
 }
 
 computeStdNormCdf <- function(x_) {
-    .Call('ffstream_computeStdNormCdf', PACKAGE = 'ffstream', x_)
+    .Call(`_ffstream_computeStdNormCdf`, x_)
 }
 
 makeTwoSidedPvalueOneSidedR <- function(p2_) {
-    .Call('ffstream_makeTwoSidedPvalueOneSidedR', PACKAGE = 'ffstream', p2_)
+    .Call(`_ffstream_makeTwoSidedPvalueOneSidedR`, p2_)
 }
 

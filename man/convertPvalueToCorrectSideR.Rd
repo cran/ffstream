@@ -15,4 +15,3 @@ Wrapper function to convery a two-sided p-value to a one-sided
 For example, both 0.01 and 0.99 are mapped to 0.01.
 }
 \keyword{internal}
-

@@ -4,12 +4,12 @@
 \alias{initFFFMeanCD}
 \title{Initialisation of FFF mean change detector}
 \usage{
-initFFFMeanCD(alpha, lambda = 1, BL = 50)
+initFFFMeanCD(alpha = 0.01, lambda = 1, BL = 50)
 }
 \arguments{
-\item{alpha}{The value of the significance level. There is
-no default value on purpose - it must be set
-by the user.}
+\item{alpha}{The value of the significance level. 
+Default value is \code{0.01}, although it is
+recommended that the user set this parameter.}
 
 \item{lambda}{The value of the fixed forgetting factor. 
 Default value is \code{lambda=1}.}
@@ -21,7 +21,8 @@ This function makes it simple to initalise an FFF object.
 }
 \examples{
 library(Rcpp)
-fffcd1 <- initFFFMeanCD(0.99, 0.95)     # initialises with alpha=0.99
+fffcd1 <- initFFFMeanCD()               # initialises with alpha=0.01
+                                        
+fffcd2 <- initFFFMeanCD(0.05, 0.95)     # initialises with alpha=0.05
                                         # and lambda=0.95 (and BL=50)
 }
-

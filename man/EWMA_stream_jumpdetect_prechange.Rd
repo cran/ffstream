@@ -34,4 +34,3 @@ Original implementation in R of EWMA change detector, but now
 expecting the prechange mean and variance to be specified.
 }
 \keyword{internal}
-

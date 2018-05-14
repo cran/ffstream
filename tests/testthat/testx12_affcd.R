@@ -402,3 +402,38 @@ test_that("detectSingle works for FFFMeanCD with prechange known", {
         })
 
 
+
+
+#TODO: Need to add tests for getLambda and getLderiv to reconcile ideas
+#test_that("checking getLderiv for BL=0", {
+#        #create aff and affcd objects
+#        etaval <- 0.01
+#        alphaval <- 0.05
+#        BL <- 0
+#
+#        aff1 <- initAFFMean(eta=etaval)
+#        affcd1 <- initAFFMeanCD(eta=etaval, alpha=alphaval)
+#        
+#
+#        #create stream
+#        set.seed(1)
+#        N <- 50
+#        x <- rnorm(2*N) + rep(c(0, 3), each=N)
+#
+#        lastK <- 60
+#        cat("\n\nhello\n")
+#        for ( i in seq_along(x) ){
+#            obs <- x[i]
+#            aff1$update(obs)
+#            affcd1$update(obs)
+#
+#            if (i > N - lastK){
+#                cat(i, ": " , aff1$lambda, " ", affcd1$lambda, "\n ")
+#            }
+#
+#        }
+#        expect_equal(aff1$lambda, affcd1$lambda)
+#        cat("\n")
+#        
+#
+#        })

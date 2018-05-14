@@ -41,4 +41,3 @@ CUSUM updates via:
          increase and a decrease in the mean).
 }
 \keyword{internal}
-

@@ -53,8 +53,13 @@ test_that("AFF change detector is initialised correctly (eta)", {
 
 test_that("AFF change detector is initialised correctly (BL)", {
         #should FAIL - BL not in range 
-        expect_error(fffcd1 <- initAFFMeanCD(0.01, 0.01, BL=-1), "BL")
-        expect_error(fffcd1 <- initAFFMeanCD(0.01, 0.01, BL=-1), "not greater than")
+        expect_error(affcd1 <- initAFFMeanCD(0.01, 0.01, BL=-1), "BL")
+        expect_error(affcd1 <- initAFFMeanCD(0.01, 0.01, BL=-1), "not greater than")
+
+
+        #SHOULD FAIL - BL not in range
+        expect_error(affcd1 <- initAFFMeanCD(0.01, 0.01, BL=1), "BL")
+        expect_error(affcd1 <- initAFFMeanCD(0.01, 0.01, BL=1), "not greater than")
 
         #no more lambdaBL
         #should FAIL - lambdaBL not numeric 
@@ -98,6 +103,16 @@ test_that("AFF change detector is initialised correctly (pass)", {
         expect_error(fffcd1 <- initAFFMeanCD(eta=0.01, alpha=0.01, BL=50.1), NA)
 
         #SHOULD PASS - prints nothing
+        expect_error(fffcd1 <- initAFFMeanCD(eta=0.01, alpha=0.01, BL=2), NA)
+
+        #NOTE: case BL=1 must fail, but BL=0 is okay, the user must just set
+        #prechange values for mean and variance
+
+        #SHOULD PASS - prints nothing
         expect_error(fffcd1 <- initAFFMeanCD(eta=0.01, alpha=0.01, BL=0), NA)
+
+        #SHOULD PASS
+        expect_error(fffcd1 <- initAFFMeanCD(), NA) 
+
         })
 

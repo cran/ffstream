@@ -23,4 +23,3 @@ For a particular parameter, create an error message specifying that
 the parameter is not finite (i.e. not numeric and not NaN)
 }
 \keyword{internal}
-

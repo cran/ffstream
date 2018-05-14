@@ -24,6 +24,9 @@ const double N01QUANTILE_0025 = -1.959964;
 const double DEFAULT_PVALUE = 0.5;
 const double INIT_STREAM_EST_MEAN = INIT_XBAR;
 const double INIT_STREAM_EST_SIGMA = INIT_S2;
+
+//NEW variable
+const double INIT_STREAM_EST_SIGMA_SQ = INIT_S2 * INIT_S2;
 const int INIT_BL_COUNT = 0;
 const int DEFAULT_BL = 50;
 const bool INIT_IN_BURN_IN = true;

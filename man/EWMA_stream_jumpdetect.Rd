@@ -28,4 +28,3 @@ Original implementation in R of EWMA change detector, now with
 documentation.
 }
 \keyword{internal}
-

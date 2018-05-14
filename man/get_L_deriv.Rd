@@ -19,4 +19,3 @@ Compute the derivative of the cost function L, defined as:
 \deqn{L_{N} = [\bar{x}_{N-1, \overrightarrow{\lambda}} - x_{N}}
 }
 \keyword{internal}
-

@@ -54,9 +54,9 @@ initAFFMean <- function(eta=0.1){
 #'
 #' This function makes it simple to initalise an FFF object.
 #'              
-#' @param alpha The value of the significance level. There is
-#'              no default value on purpose - it must be set
-#'              by the user.
+#' @param alpha The value of the significance level. 
+#'              Default value is \code{0.01}, although it is
+#'              recommended that the user set this parameter.
 #'              
 #' @param lambda The value of the fixed forgetting factor. 
 #'               Default value is \code{lambda=1}.
@@ -65,10 +65,12 @@ initAFFMean <- function(eta=0.1){
 #'              
 #' @examples
 #' library(Rcpp)
-#' fffcd1 <- initFFFMeanCD(0.99, 0.95)     # initialises with alpha=0.99
+#' fffcd1 <- initFFFMeanCD()               # initialises with alpha=0.01
+#'                                         
+#' fffcd2 <- initFFFMeanCD(0.05, 0.95)     # initialises with alpha=0.05
 #'                                         # and lambda=0.95 (and BL=50)
 #' @export 
-initFFFMeanCD <- function(alpha, lambda=1, BL=50){
+initFFFMeanCD <- function(alpha=0.01, lambda=1, BL=50){
     BL <- checkFFFMeanCDargs(alpha, lambda, BL, "initFFFMeanCD")
 
     #if pass all these tests, then can initialise:
@@ -83,23 +85,33 @@ initFFFMeanCD <- function(alpha, lambda=1, BL=50){
 #'
 #'
 #' @param alpha The value of the significance level. 
-#'              There is no default value on purpose - it must 
-#'              be specified by the user.
+#'              Default value is \code{0.01}, although it is
+#'              recommended that the user set this parameter.
 #'
 #' @param eta The value of the step-size in the gradient descent. 
 #'            Default is \code{eta=0.01}.
 #'
-#' @param BL The length of the burn-in region. Default value is \code{BL=50}.
+#' @param BL The length of the burn-in region. Default value is \code{BL=50}. 
+#'           Must be at least greater than or equal to \code{2}. No maximum.
+#'           However, there is an exception: \code{BL=0} also works, but in
+#'           this case the user needs to specify the \code{streamEstMean} and
+#'           \code{streamEstSigma}; see 
 #'
 #' @examples
 #' library(Rcpp)
-#' affmeancd1 <- initAFFMeanCD(alpha=0.01)    # initialises with eta=0.01, 
-#'                                            # and BL=50
-#'
+#' affmeancd1 <- initAFFMeanCD()              # initialises with alpha=0.01, 
+#'                                            # eta=0.01 and BL=50
+#' 
 #' affmeancd2 <- initAFFMeanCD(alpha=0.005, eta=0.1,  BL=100) 
 #'
+#' 
+#' affmeancd3 <- initAFFMeanCD(alpha=0.005, eta=0.1,  BL=0)     # Example 3
+#' affmeancd3$streamEstMean <- 0
+#' affmeancd3$streamEstSigma <- 1
+#'
+#'
 #' @export 
-initAFFMeanCD <- function(alpha, eta=0.01, BL=50){
+initAFFMeanCD <- function(alpha=0.01, eta=0.01, BL=50){
     BL <- checkAFFMeanCDargs(alpha, eta, BL, "initAFFMeanCD")
     #if pass all these tests, then can initialise:
     return( new(AFFChangeDetector, alpha, eta, BL))

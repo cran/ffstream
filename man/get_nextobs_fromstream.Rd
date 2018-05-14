@@ -15,4 +15,3 @@ get_nextobs_fromstream(stream, streampos)
 Obtain the next observation from the stream
 }
 \keyword{internal}
-

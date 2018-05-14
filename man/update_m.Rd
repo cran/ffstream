@@ -17,4 +17,3 @@ update_m(m_old, lambda_old, x_new)
 Function to calculate \code{m}
 }
 \keyword{internal}
-

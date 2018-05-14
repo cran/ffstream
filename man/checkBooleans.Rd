@@ -25,4 +25,3 @@ Make sure the booleans \code{multiple} and \code{single} are not both
 \code{NULL}. Also
 }
 \keyword{internal}
-

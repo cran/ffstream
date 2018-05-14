@@ -17,4 +17,3 @@ update_mean(ffmean_old, w_new, x_new)
 Function to sequentially update the FF mean
 }
 \keyword{internal}
-

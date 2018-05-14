@@ -32,4 +32,3 @@ Creates a stream of observations, where after each changepoint
          the mean increases by one standard deviation.
 }
 \keyword{internal}
-

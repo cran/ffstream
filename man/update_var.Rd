@@ -27,4 +27,3 @@ the current value of the FF mean.}
 Function to sequentially update the forgetting factor variance
 }
 \keyword{internal}
-

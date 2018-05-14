@@ -420,7 +420,8 @@ checkFFFMeanCDargs <- function(alpha, lambda, BL, functionName=""){
 #'
 #' @keywords internal
 checkAFFMeanCDargs <- function(alpha, eta, BL, functionName=""){
-    BLMIN <- 0
+    BLMIN <- 2
+    BL_ZERO <- 0
     ALPHAMIN <- 0
     ALPHAMAX <- 1
     ETAMIN <- 0
@@ -465,7 +466,7 @@ checkAFFMeanCDargs <- function(alpha, eta, BL, functionName=""){
         stop(getFiniteErrorMessage(paramName="BL", algoName="AFF change detector", functionName=functionName), call.=FALSE)
     }
     #BL must be above min, and truncated
-    if ( !(isAboveBound(BL, BLMIN)) ){
+    if ( !(isAboveBound(BL, BLMIN)) && !(BL == BL_ZERO) ){
         stop(getIsAboveErrorMessage(paramName="BL", lowerBound=BLMIN, algoName="AFF change detector", functionName=functionName), call.=FALSE)
     }
     #BL must be an integer - so force truncation

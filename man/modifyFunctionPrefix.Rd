@@ -13,4 +13,3 @@ modifyFunctionPrefix(functionName)
 Add some text to the function name so it fits in with the error message.
 }
 \keyword{internal}
-

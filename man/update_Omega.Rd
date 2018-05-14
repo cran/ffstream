@@ -17,4 +17,3 @@ update_Omega(Omega_old, lambda_old, w_new)
 Function to sequentially update the value of \code{Omega}
 }
 \keyword{internal}
-

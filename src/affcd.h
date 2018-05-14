@@ -9,9 +9,14 @@
 #include<vector>
 
 //only needed for change detection version
-const double INIT_SCALEFACTOR = 0.0;
+// NOTE: Change from v0.1.5, now INIT_SCALEFACTOR is 1.
+const double INIT_SCALEFACTOR = 1.0;
 const double DEFAULT_SCALEFACTOR = 1.0;
 const double ZERO_SCALEFACTOR = 0.0;
+//Needs to be strictly larger than 1
+const int BL_TOO_SMALL = 1;
+
+
 
 //-----------------------------------------------------------------------//
 
@@ -24,6 +29,7 @@ class AFFChangeDetector : public Detector{
 
         double getAlpha();
         double getLambda();
+        double getLderiv();
 
         void print();
         void update(double);

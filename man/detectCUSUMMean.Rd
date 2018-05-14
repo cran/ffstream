@@ -93,6 +93,7 @@ Dean Bodenham
 E. S. Page (1954) \emph{Continuous inspection schemes}. 
 Biometrika, 41(1/2), 100-115
 }
+
 \examples{
 # create a stream with three changepoints
 set.seed(8)
@@ -113,4 +114,3 @@ list_cusum3 <- detectCUSUMMean(x, k=0.25, h=8.00, BL=50, single=TRUE,
 
 
 }
-

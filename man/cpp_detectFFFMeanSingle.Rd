@@ -27,4 +27,3 @@ and a burn-in length \code{BL}, returns a list containing the single
 changepoint. Algorithm is implemented in C++.
 }
 \keyword{internal}
-

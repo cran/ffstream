@@ -13,4 +13,3 @@ update_streampos(streampos)
 Updates the index keeping track of the stream position
 }
 \keyword{internal}
-

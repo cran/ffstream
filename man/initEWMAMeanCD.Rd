@@ -24,4 +24,3 @@ e1 <- initEWMAMeanCD(r=0.05, L=0.275)    #initialises with r=0.20, L=3.00}
 \description{
 This function makes it simple to initialise a EWMA object.
 }
-

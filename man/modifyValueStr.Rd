@@ -13,4 +13,3 @@ modifyValueStr(value)
 Create a string with the value to be used in an error message.
 }
 \keyword{internal}
-

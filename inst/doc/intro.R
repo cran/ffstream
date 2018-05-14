@@ -1,4 +1,5 @@
 ## ----include = FALSE-----------------------------------------------------
+#need to make vignette compile
 library(Rcpp)
 library(ffstream)
 

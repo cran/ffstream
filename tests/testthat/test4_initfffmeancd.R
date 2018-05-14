@@ -102,5 +102,8 @@ test_that("fff change detector is initialised correctly (pass)", {
 
         #SHOULD PASS - prints nothing
         expect_error(fffcd1 <- initFFFMeanCD(lambda=0.99, alpha=0.01, BL=0), NA)
+
+        #SHOULD PASS - no commands, all defaults
+        expect_error(fffcd1 <- initFFFMeanCD(), NA) 
         })
 

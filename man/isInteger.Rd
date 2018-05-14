@@ -13,4 +13,3 @@ isInteger(x)
 Function to check that a value \code{x} is an integer.
 }
 \keyword{internal}
-

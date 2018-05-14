@@ -73,4 +73,3 @@ A vector with the values of the adaptive forgetting factor
 Original implementation in R of the AFF
 }
 \keyword{internal}
-

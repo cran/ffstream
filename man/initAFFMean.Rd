@@ -20,4 +20,3 @@ aff1 <- initAFFMean()     # initialises with eta=0.01
 aff2 <- initAFFMean(0.1)  # initialises with eta=0.1
 
 }
-

@@ -14,7 +14,8 @@ Detector::Detector() :
     changeDetected(INIT_CHANGE_DETECTED),
     streamEstimator(LAMBDA_NO_FORGETTING),
     streamEstMean(INIT_STREAM_EST_MEAN),
-    streamEstSigma(INIT_STREAM_EST_SIGMA){}
+    streamEstSigma(INIT_STREAM_EST_SIGMA),
+    streamEstSigmaSq(INIT_STREAM_EST_SIGMA_SQ){}
 
 
 Detector::Detector(int BL_) :
@@ -26,7 +27,8 @@ Detector::Detector(int BL_) :
     changeDetected(INIT_CHANGE_DETECTED),
     streamEstimator(LAMBDA_NO_FORGETTING),
     streamEstMean(INIT_STREAM_EST_MEAN),
-    streamEstSigma(INIT_STREAM_EST_SIGMA){}
+    streamEstSigma(INIT_STREAM_EST_SIGMA),
+    streamEstSigmaSq(INIT_STREAM_EST_SIGMA_SQ){}
 
 
 //destructor
@@ -60,14 +62,42 @@ double Detector::getStreamEstSigma(){
     return streamEstSigma;
 }
 
-//set the streamEstSigma from the streamEstimator's s2
-void Detector::setStreamEstSigma(){
-    streamEstSigma = std::sqrt( streamEstimator.getS2() );
-}
 
 void Detector::setStreamEstSigma(double streamEstSigma_){
     streamEstSigma = streamEstSigma_;
+    //need to set square:
+    streamEstSigmaSq = streamEstSigma * streamEstSigma;
 }
+
+//
+//set the streamEstSigma from the streamEstimator's s2
+double Detector::getStreamEstSigmaSq(){
+    return streamEstSigmaSq;
+}
+
+
+
+//set the streamEstSigma from the streamEstimator's s2
+// void Detector::setStreamEstSigma(){
+//     streamEstSigma = std::sqrt( streamEstimator.getS2() );
+// }
+
+
+//if set by value, but actually this will never occur
+void Detector::setStreamEstSigmaSq(double streamEstSigmaSq_){
+    streamEstSigmaSq = streamEstSigmaSq_;
+    //need to set square root:
+    streamEstSigma = std::sqrt(streamEstSigmaSq);
+}
+
+
+// This will be called after streamEstimator is used
+void Detector::setStreamEstSigmaSq(){
+    streamEstSigmaSq = streamEstimator.getS2();
+    //need to set square root:
+    streamEstSigma = std::sqrt(streamEstSigmaSq);
+}
+
 
 //stop the burn in (end of burn in), so initialise streamEstMean and streamEstSigma
 void Detector::stopBurnIn(){
@@ -76,7 +106,8 @@ void Detector::stopBurnIn(){
     //NB: only do this if BL unequal to zero
     if (BL != 0){
         Detector::setStreamEstMean();
-        Detector::setStreamEstSigma();
+        //note change here from Sigma to SigmaSq
+        Detector::setStreamEstSigmaSq();
     }
     inDetectState = not inBurnIn;
     changeDetected = false;

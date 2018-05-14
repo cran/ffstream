@@ -24,4 +24,3 @@ the parameter does not exist (e.g. \code{Na}, which is not the same
 as \code{NA}).
 }
 \keyword{internal}
-

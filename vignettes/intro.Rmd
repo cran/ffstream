@@ -1,10 +1,10 @@
 ---
-title: "ffstream 0.1.4"
+title: "Introduction to ffstream v0.1.6"
 author: "Dean Bodenham"
-date: "12 November 2016"
+date: "12 May 2018"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ffstream_0.1.4}
+  %\VignetteIndexEntry{ffstream_0.1.6}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -12,13 +12,14 @@ vignette: >
 
 
 ```{r include = FALSE}
+#need to make vignette compile
 library(Rcpp)
 library(ffstream)
 ```
 
 # Introduction
 
-The ffstream package provides an implementation for the Adaptive Forgetting Factor (AFF) change detector [(Bodenham and Adams, 2016)](http://link.springer.com/article/10.1007/s11222-016-9684-8). In fact, the following four online change detection methods are implemented:  
+The `ffstream` package provides an implementation for the Adaptive Forgetting Factor (AFF) change detector [(Bodenham and Adams, 2016)](http://link.springer.com/article/10.1007/s11222-016-9684-8). In fact, the following four online change detection methods are implemented:  
 
 * AFF (Bodenham and Adams, 2016)
 * FFF (Bodenham and Adams, 2016)

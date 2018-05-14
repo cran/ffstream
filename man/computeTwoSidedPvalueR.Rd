@@ -18,4 +18,3 @@ Wrapper function to compute a two-sided p-value from a statistics
 or quantile value, with the aid of lower and upper bounds.
 }
 \keyword{internal}
-

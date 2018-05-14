@@ -18,4 +18,3 @@ Function to sequentially update the weight used in the computation of
 the forgetting factor mean
 }
 \keyword{internal}
-

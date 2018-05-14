@@ -19,4 +19,3 @@ get_xbar_deriv(Delta, xbar, Omega, w)
 Function to compute the derivative of \code{xbar}.
 }
 \keyword{internal}
-

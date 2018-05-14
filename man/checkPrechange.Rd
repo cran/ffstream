@@ -28,4 +28,3 @@ must not be \code{NULL}, and at least one of \code{prechangeSigma} and
 \code{prechangeVar} must not be \code{NULL}.
 }
 \keyword{internal}
-

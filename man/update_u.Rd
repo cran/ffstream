@@ -16,4 +16,3 @@ Function to sequentially update the weight used to scale the forgetting
 factor variance, \code{u}.
 }
 \keyword{internal}
-

@@ -55,4 +55,3 @@ A vector of estimated changepoints.
 Original implementation in R of FFF change detector, but now
 }
 \keyword{internal}
-

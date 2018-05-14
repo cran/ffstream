@@ -15,4 +15,3 @@ isAboveBound(x, lower)
 Function to check that a value \code{x} is above a certain lower bound.
 }
 \keyword{internal}
-

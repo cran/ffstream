@@ -20,4 +20,3 @@ Function to sequentially update the FF mean
 \code{\link{update_mean}}
 }
 \keyword{internal}
-

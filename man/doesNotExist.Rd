@@ -13,4 +13,3 @@ doesNotExist(object)
 For a particular parameter, check if the object with that name exists
 }
 \keyword{internal}
-

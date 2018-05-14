@@ -19,4 +19,3 @@ factor, this returns the value of the fixed forgetting factor mean
 length of \code{x}. Algorithm is implemented in C++.
 }
 \keyword{internal}
-

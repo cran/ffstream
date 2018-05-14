@@ -42,13 +42,23 @@ void AFFChangeDetector::print(){
 //stop the burn-in
 void AFFChangeDetector::stopBurnIn(){
     Detector::stopBurnIn();
+
+    // NOTE: Change from v0.1.5, now INIT_SCALEFACTOR is 1.
+    // This handles the case when BL = 0, and the streamEstSigma has not been
+    // set before starting the run, in which case the update will not work.
     scaleFactor = INIT_SCALEFACTOR;
-    if (BL > 0){
+    if (BL > BL_TOO_SMALL){
         scaleFactor = 1 / streamEstimator.getS2();
     } else {
-        if (getStreamEstSigma() > 0){
-            scaleFactor = 1 / getStreamEstSigma();
-        } 
+        //so less than BL_MIN
+        if (getStreamEstSigmaSq() > 0){
+            //NOTE: Needs to be the square here
+            scaleFactor = 1 / getStreamEstSigmaSq();
+        } else {
+            //case: BL=0, no streamEstSigma
+            //INIT_SCALEFACTOR should take care of this case, but it doesn't 
+            scaleFactor = DEFAULT_SCALEFACTOR;
+        }
     }
 }
 
@@ -186,6 +196,12 @@ double AFFChangeDetector::getAlpha(){
     return alpha;
 }
 
+
+double AFFChangeDetector::getLderiv(){
+    return aff.getLderiv();
+}
+
+
 //-----------------------------------------------------------------------//
 
 
@@ -212,7 +228,8 @@ RCPP_MODULE(affcdmodule){
         .property("affxbar", &AFFChangeDetector::getAFFxbar, &AFFChangeDetector::setAFFxbar, "documentation for AFF xbar")
         .method( "checkIfChange", &AFFChangeDetector::checkIfChange, "documentation for checkIfChange")
         .property( "lambda", &AFFChangeDetector::getLambda, "documentation for lambda")
-        ;
+        .property( "Lderiv", &AFFChangeDetector::getLderiv, "documentation for Lderiv")
+        ; 
 }
 
 

@@ -17,4 +17,3 @@ update_Delta(Delta_old, lambda_old, m_new)
 Function to sequentially update the value of \code{Delta}
 }
 \keyword{internal}
-

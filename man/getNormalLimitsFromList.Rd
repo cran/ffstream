@@ -26,4 +26,3 @@ Gets the 100p% confidence interval limits for N(mu, stddev).
 NB: stddev used, not variance!
 }
 \keyword{internal}
-

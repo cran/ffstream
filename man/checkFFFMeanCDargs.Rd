@@ -26,4 +26,3 @@ A function which will do all the checks for FFFcd, check the parameters
 are in the proper ranges, etc. Does not return any values.
 }
 \keyword{internal}
-

@@ -2,6 +2,7 @@
 % Please edit documentation in R/errorMessage.R
 \name{checkStream}
 \alias{checkStream}
+\alias{checkStream}
 \title{Check the stream consists of finite numeric values}
 \usage{
 checkStream(x, functionName = "")
@@ -29,4 +30,3 @@ Check the stream does not have any NULLs, NAs, infs, etc
 Check if the skipChecks parameter is a boolean (it should be).
 }
 \keyword{internal}
-

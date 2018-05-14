@@ -30,4 +30,3 @@ and values for known prechange mean and variance, returns a list containing
 the single changepoint. Algorithm is implemented in C++.
 }
 \keyword{internal}
-

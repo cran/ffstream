@@ -17,4 +17,3 @@ inbounds(x, low_bound, up_bound)
 Function to check that a value \code{x} is between two values
 }
 \keyword{internal}
-

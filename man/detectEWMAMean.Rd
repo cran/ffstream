@@ -92,6 +92,7 @@ Dean Bodenham
 S. W. Roberts (1959) \emph{Control chart tests based 
 on geometric moving averages}. Technometrics, 1(3), 239-250
 }
+
 \examples{
 # create a stream with three changepoints
 set.seed(8)
@@ -110,4 +111,3 @@ list_ewma3 <- detectEWMAMean(x, r=0.25, L=3.023, BL=50, single=TRUE,
 
 
 }
-

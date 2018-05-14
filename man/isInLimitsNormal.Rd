@@ -15,4 +15,3 @@ isInLimitsNormal(x, limitsvec)
 Checks if a value is in normal limits
 }
 \keyword{internal}
-

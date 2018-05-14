@@ -40,4 +40,3 @@ EWMA updates via:
          decrease in the mean.
 }
 \keyword{internal}
-

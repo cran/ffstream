@@ -17,4 +17,3 @@ isInBounds(x, lower, upper)
 Function to check that a value \code{x} is between two values.
 }
 \keyword{internal}
-

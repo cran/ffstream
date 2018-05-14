@@ -21,4 +21,3 @@ Update the forgetting factor \code{lambda} using the derivative of
 a particular cost function
 }
 \keyword{internal}
-

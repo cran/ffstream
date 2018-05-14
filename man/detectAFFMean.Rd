@@ -83,6 +83,7 @@ streams using adaptive estimation}.
 Statistics and Computing  
 doi:10.1007/s11222-016-9684-8
 }
+
 \examples{
 # create a stream with three changepoints
 set.seed(8)
@@ -102,4 +103,3 @@ list_aff3 <- detectAFFMean(x, alpha=0.01, eta=0.01, single=TRUE,
 
 
 }
-

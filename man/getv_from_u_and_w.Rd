@@ -16,4 +16,3 @@ Function to calculate \code{v} from \code{u} and \code{w}, according
 to the formula \eqn{v= w(1-u)}.
 }
 \keyword{internal}
-

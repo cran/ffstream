@@ -2,7 +2,7 @@
 % Please edit documentation in R/originalRcodePrechange.R
 \name{CUSUM_stream_jumpdetect_prechange}
 \alias{CUSUM_stream_jumpdetect_prechange}
-\title{CUSUM change detection for a stream in R with known prechange parameters}
+\title{'CUSUM' change detection for a stream in R with known prechange parameters}
 \usage{
 CUSUM_stream_jumpdetect_prechange(stream, BL, params, mu0, sigma0)
 }
@@ -12,7 +12,7 @@ CUSUM_stream_jumpdetect_prechange(stream, BL, params, mu0, sigma0)
 \item{BL}{The burn-in length - this won't actually be used, but is kept
 for historical reasons.}
 
-\item{params}{A list of parameters for the CUSUM algorithm. Consists of
+\item{params}{A list of parameters for the 'CUSUM' algorithm. Consists of
              \describe{
                  \item{\code{d}}{A control parameter also known as 
                                  \eqn{k}.}
@@ -30,7 +30,7 @@ in this context}
 A vector of estimated changepoints.
 }
 \description{
-Original implementation in R of CUSUM change detector, but now
+Original implementation in R of 'CUSUM' change detector, but now
 expecting the prechange mean and variance to be specified.
 }
 \section{Author}{

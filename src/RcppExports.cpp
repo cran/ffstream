@@ -5,6 +5,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // cpp_detectFFFMeanMultiple
 Rcpp::List cpp_detectFFFMeanMultiple(Rcpp::NumericVector x, double lambda, double alpha, int BL);
 RcppExport SEXP _ffstream_cpp_detectFFFMeanMultiple(SEXP xSEXP, SEXP lambdaSEXP, SEXP alphaSEXP, SEXP BLSEXP) {

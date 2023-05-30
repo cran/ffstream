@@ -20,6 +20,9 @@ However, there is an exception: \code{BL=0} also works, but in
 this case the user needs to specify the \code{streamEstMean} and
 \code{streamEstSigma}; see}
 }
+\value{
+An AFF mean change detector object.
+}
 \description{
 This function makes it simple to initalise an FFF object.
 }

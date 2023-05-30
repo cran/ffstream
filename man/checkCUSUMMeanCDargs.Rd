@@ -2,14 +2,14 @@
 % Please edit documentation in R/errorMessage.R
 \name{checkCUSUMMeanCDargs}
 \alias{checkCUSUMMeanCDargs}
-\title{Check the arguments for CUSUM mean change detector}
+\title{Check the arguments for 'CUSUM' mean change detector}
 \usage{
 checkCUSUMMeanCDargs(k, h, BL, functionName = "")
 }
 \arguments{
-\item{k}{One of the CUSUM control parameters. Must be finite, etc.}
+\item{k}{One of the 'CUSUM' control parameters. Must be finite, etc.}
 
-\item{h}{One of the CUSUM control parameters. Must be finite, etc.}
+\item{h}{One of the 'CUSUM' control parameters. Must be finite, etc.}
 
 \item{BL}{The value of the burn-in length. Must be finite, above 0, etc.}
 

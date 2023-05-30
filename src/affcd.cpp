@@ -104,6 +104,9 @@ void AFFChangeDetector::update(double obs){
     if(inBurnIn){
         //in burn-in mode - scaleFactor argument is 0
         //  aff.update() will not use scaleFactor
+        //  TODO: Check this again; this means that the aff is not updated
+        //  during the burn-in period, but maybe this is the wrong approach.
+        //  Need to check original R code again.
         aff.updateScaled(obs, ZERO_SCALEFACTOR);
         streamEstimator.update(obs);
         BLcount++;

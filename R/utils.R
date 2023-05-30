@@ -215,3 +215,43 @@ makeStreamMeanChangeR <- function(numChanges=3, regimeLength=150, seednum=NULL, 
     x <- rnorm(N, mean=mu0, sd=sigma0)  +  stepChanges
     return(x)
 }
+
+
+
+
+#' Checks that the last character of the folder is the separator
+#'
+#' If the last character in a folder's name is the file separator, remove it.
+#'
+#' The reason this is included is because the R function \code{file.path}
+#' will not realise the last element is the platform's file separator, 
+#' so concatenating could result in a double slash.
+#'
+#' @param folder A string, the folder name
+#'
+#' @details The reason this is included is because the R function 
+#'          \code{file.path} will not realise the last element is 
+#'          the platform's file separator, so concatenating could 
+#'          result in a double slash.
+#'
+#' @return The folder name, WITHOUT the separator, if it is present.
+#'
+#' @keywords internal
+ensureFolderDoesNotEndInSep <- function(folder){
+    returnString <- folder
+
+    #the separator is the platform's separator
+    mysep <- .Platform$file.sep
+
+    #checks the last character
+    if( substr(folder, nchar(folder), nchar(folder)) == mysep ){
+        # make sure there is more than one character, removing "/" case
+        if (nchar(folder) > 1){
+            returnString <- substr(folder, 1, nchar(folder)-1)
+        }
+    } else{
+        #returnString <- paste0(returnString, mysep)
+        #do nothing
+    }
+    return(returnString)
+}

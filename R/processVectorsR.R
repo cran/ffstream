@@ -3,7 +3,7 @@
 #' Given a vector \code{x} and a value \code{lambda} for a fixed forgetting
 #' factor, returns the value of the fixed forgetting factor mean
 #' \eqn{\bar{x}_{N, \lambda}}, where \eqn{N} is the length of \code{x}.
-#' Algorithm is implemented in C++.
+#' Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values. Default is \code{c(0)}, 
 #'          a vector of one element (zero)
@@ -13,6 +13,7 @@
 #'
 #' @seealso \code{\link{computeAFFMean}}
 #'
+#' @return The fixed forgetting factor mean (scalar).
 #'
 #' @section Author:
 #' Dean Bodenham
@@ -76,7 +77,7 @@ computeFFFMean <- function(x=c(0), lambda=0.99){
 #' in the stochastic gradient descent for the adaptive forgetting
 #' factor, this returns the value of the fixed forgetting factor mean
 #' \eqn{\bar{x}_{N, \overrightarrow{\lambda} }}, where \eqn{N} is the 
-#' length of \code{x}. Algorithm is implemented in C++.
+#' length of \code{x}. Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values. Default is \code{c(0)}, 
 #'          a vector of one element (zero)
@@ -86,6 +87,7 @@ computeFFFMean <- function(x=c(0), lambda=0.99){
 #'
 #' @seealso \code{\link{computeFFFMean}}
 #'
+#' @return The adaptive forgetting factor mean (scalar).
 #'
 #' @section Author:
 #' Dean Bodenham

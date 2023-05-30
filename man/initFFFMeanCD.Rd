@@ -16,6 +16,9 @@ Default value is \code{lambda=1}.}
 
 \item{BL}{The length of the burn-in region. Default value is \code{BL=50}.}
 }
+\value{
+A FFF mean change detector object.
+}
 \description{
 This function makes it simple to initalise an FFF object.
 }

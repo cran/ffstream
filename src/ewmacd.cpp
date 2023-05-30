@@ -59,9 +59,9 @@ void EwmaChangeDetector::computePvalue(){
 //stop the burn-in
 void EwmaChangeDetector::stopBurnIn(){
     Detector::stopBurnIn();
-    //For EWMA need to set Z to streamEstMean
+    //For 'EWMA' need to set Z to streamEstMean
     Z = getStreamEstMean();
-    //For EWMA lso need to reset rFactorSigmaZ
+    //For 'EWMA' lso need to reset rFactorSigmaZ
     rFactorSigmaZ = 1;
 }
 
@@ -71,7 +71,7 @@ void EwmaChangeDetector::stopBurnIn(){
 void EwmaChangeDetector::startBurnIn(){
     Detector::startBurnIn();
 
-    //reset the CUSUM and burn-in counter
+    //reset the 'CUSUM' and burn-in counter
     Z = INIT_EWMA_Z;
     sigmaZ = INIT_EWMA_SIGMA_Z;
     rFactorSigmaZ = INIT_EWMA_RFACTOR_SIGMA_Z;
@@ -139,7 +139,7 @@ double EwmaChangeDetector::getZ(){
 // }
 
 
-//print the EWMA values
+//print the 'EWMA' values
 void EwmaChangeDetector::print(){
     Rcpp::Rcout << "r: " << getR() << ", L: " << getL();
     Rcpp::Rcout << ", Z = " << getZ();

@@ -2,7 +2,7 @@
 % Please edit documentation in R/ffstream-package.R
 \name{ffstream}
 \alias{ffstream}
-\title{ffstream package 0.1.6}
+\title{ffstream package 0.1.7}
 \usage{
 ffstream()
 }

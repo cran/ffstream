@@ -45,6 +45,7 @@
 #'                                 }
 #'                   }
 #'
+#' @return Print output to screen, and plot (optional).
 #'
 #'
 #' @section Author:
@@ -62,7 +63,7 @@
 #' @examples
 #' df <- demo_ffstream()
 #'
-#' \dontrun{
+#' \donttest{
 #' demo_ffstream(showPlot=TRUE)
 #'}
 #'
@@ -85,8 +86,10 @@ demo_ffstream <- function(showPlot=FALSE, returnStream=FALSE, plotSmall=FALSE){
 
         #part of moving legend to bottom
         #bottom left top right
-#        par(oma = c(0, 0, 0, 0))
 
+        # save old parameters and apply on exit
+        oldpar <- par(no.readonly = TRUE)
+        on.exit(par(oldpar))            
 
         xlab <- "Observation \n"
         ylab <- "Value"
@@ -113,6 +116,7 @@ demo_ffstream <- function(showPlot=FALSE, returnStream=FALSE, plotSmall=FALSE){
             legendy <- 8.5
             lineSize <- 1.5
         }
+
 
         par(pin=c(figSizeWidth, figSizeHeight))
         plot(x=seq_len(length(stream)), y=stream, type='l', col="black",

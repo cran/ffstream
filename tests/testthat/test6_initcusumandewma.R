@@ -1,6 +1,6 @@
-context("Test  6: initialisation of CUSUM")
+context("Test  6: initialisation of 'CUSUM'")
 
-test_that("init CUSUM (k fails)", {
+test_that("init 'CUSUM' (k fails)", {
 
         expect_error(cusumcd1 <- initCUSUMMeanCD(k="A", h=8.00, BL=50), " k ")
         expect_error(cusumcd1 <- initCUSUMMeanCD(k="A", h=8.00, BL=50), " not a finite ")
@@ -17,7 +17,7 @@ test_that("init CUSUM (k fails)", {
         })
 
 
-test_that("init CUSUM (h fails)", {
+test_that("init 'CUSUM' (h fails)", {
 
         expect_error(cusumcd1 <- initCUSUMMeanCD(k=0.25, h="A", BL=50), " h ")
         expect_error(cusumcd1 <- initCUSUMMeanCD(k=0.25, h="A", BL=50), "not a finite")
@@ -33,14 +33,14 @@ test_that("init CUSUM (h fails)", {
         })
 
 
-test_that("CUSUM init (BL)", {
+test_that("'CUSUM' init (BL)", {
         #should FAIL - BL not in range 
         expect_error(cusumcd1 <- initCUSUMMeanCD(k=0.25, h=8.00, BL=-1), "BL")
         expect_error(cusumcd1 <- initCUSUMMeanCD(k=0.25, h=8.00, BL=-1), "not greater than")
         })
 
 
-test_that("CUSUM init (pass)", {
+test_that("'CUSUM' init (pass)", {
 
         #----------------------------------#
         ###TESTS THAT PASS

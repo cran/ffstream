@@ -1,6 +1,6 @@
-#' Detect a change/changes in a vector using EWMA method
+#' Detect a change/changes in a vector using 'EWMA' method
 #'
-#' Given a vector \code{x}, use the EWMA method to sequentially detect changes 
+#' Given a vector \code{x}, use the 'EWMA' method to sequentially detect changes 
 #' (or a single change) in the MEAN of the vector. 
 #'
 #'
@@ -55,7 +55,7 @@
 #'                   of the stream. Default is \code{FALSE}.
 #'
 #'
-#' @details EWMA updates via: 
+#' @details 'EWMA' updates via: 
 #'          \deqn{Z_{j} = (1-r) Z_{j-1} + r x_{j}}
 #'          where \eqn{\mu} is the mean of the in-control stream, 
 #'          \eqn{x_j} is the observation at time \eqn{j} and \eqn{r} 
@@ -64,7 +64,7 @@
 #'          where \eqn{L} is the other control parameter, and 
 #'          \eqn{\sigma_{Z_j}} is a scaled version of the in-control
 #'          variance \eqn{\sigma}.
-#'          This is the formulation for using EWMA to detect an increase or
+#'          This is the formulation for using 'EWMA' to detect an increase or
 #'          decrease in the mean.
 #'
 #'

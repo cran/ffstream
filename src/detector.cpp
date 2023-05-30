@@ -170,15 +170,20 @@ Rcpp::List Detector::detectMultiple(Rcpp::NumericVector x){
 
 
 //detect single change
+//NOTE: Fix in here from v0.1.7 onwards
 Rcpp::List Detector::detectSingle(Rcpp::NumericVector x){
     //init iterator
     Rcpp::NumericVector::iterator it = x.begin();
+    //create a vector of length 1, the max number of changepoints
+    std::vector<int> changepoint(1);
+    int numChangepoints = 0;
 
     //for index of changepoint
     //counting from 1, because R indexes from 1.
     int index = 1;
     //estimated location of changepoint
-    int tauhat = 2;
+    //Set to zero for now.
+    int tauhat = 0;
 
     //flag to check if change has been found - used in while loop
     bool changeNotFound = true;
@@ -192,8 +197,21 @@ Rcpp::List Detector::detectSingle(Rcpp::NumericVector x){
         index++;
         ++it;
     }
-    //only returning single changepoint
-    return Rcpp::List::create(Rcpp::Named(CHANGEPOINT_FIELD_NAME) = tauhat); 
+    //only returning single changepoint, if tauhat is greater than 0
+    if (tauhat > 0){
+        changepoint[0] = tauhat;
+        numChangepoints++;
+    }
+    //an attempt to make the extraction of the changepoints more readable
+    //This is very convoluted, but it ensures that a vector of length 0 is
+    //returned if no changepoints are found.
+    return Rcpp::List::create( 
+            Rcpp::Named(CHANGEPOINT_FIELD_NAME)=
+            Rcpp::wrap(std::vector<int>(changepoint.begin(), 
+                                        changepoint.begin()+numChangepoints)
+                      ) 
+            ); 
+
 }
 
 

@@ -2,14 +2,14 @@
 % Please edit documentation in R/errorMessage.R
 \name{checkEWMAMeanCDargs}
 \alias{checkEWMAMeanCDargs}
-\title{Check the arguments for EWMA mean change detector}
+\title{Check the arguments for 'EWMA' mean change detector}
 \usage{
 checkEWMAMeanCDargs(r, L, BL, functionName = "")
 }
 \arguments{
-\item{r}{One of the EWMA control parameters. Must be finite, etc.}
+\item{r}{One of the 'EWMA' control parameters. Must be finite, etc.}
 
-\item{L}{One of the EWMA control parameters. Must be finite, etc.}
+\item{L}{One of the 'EWMA' control parameters. Must be finite, etc.}
 
 \item{BL}{The value of the burn-in length. Must be finite, above 0, etc.}
 

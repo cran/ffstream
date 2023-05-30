@@ -4,8 +4,13 @@
 \alias{cpp_detectFFFMeanSinglePrechange}
 \title{Find the first changepoint in the mean using FFF, assuming prechange known}
 \usage{
-cpp_detectFFFMeanSinglePrechange(x, lambda, alpha, prechangeMean,
-  prechangeSigma)
+cpp_detectFFFMeanSinglePrechange(
+  x,
+  lambda,
+  alpha,
+  prechangeMean,
+  prechangeSigma
+)
 }
 \arguments{
 \item{x}{Vector of numeric values values.}
@@ -27,6 +32,6 @@ A list with
 \description{
 Given a vector \code{x}, a value \code{lambda}, a threshold \code{alpha},
 and values for known prechange mean and variance, returns a list containing 
-the single changepoint. Algorithm is implemented in C++.
+the single changepoint. Algorithm is implemented in 'C++'.
 }
 \keyword{internal}

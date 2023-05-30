@@ -1,8 +1,6 @@
-context("Test  9: CUSUM change detection")
+context("Test  9: 'CUSUM' change detection")
 
-changepointStr <<- "tauhat"
-
-test_that("CUSUM change detection on stream 1", {
+test_that("'CUSUM' change detection on stream 1", {
         stream1 <- makeStreamMeanChangeR(seednum=1, numChanges=3)
 
         d_1 <- 0.25
@@ -13,6 +11,7 @@ test_that("CUSUM change detection on stream 1", {
 
         cusum1 <- initCUSUMMeanCD(k=d_1, h=B_1, BL=BL1)
         returnList <- cusum1$processVectorSave(stream1)
+        changepointStr <- "tauhat"
         changesDetectedRcpp1 <- returnList[[changepointStr]]
 
         #need to have -1 for R version (change signalled at start of new regime in R
@@ -21,7 +20,7 @@ test_that("CUSUM change detection on stream 1", {
         })
 
 
-test_that("CUSUM change detection on stream 2", {
+test_that("'CUSUM' change detection on stream 2", {
         stream2 <- makeStreamMeanChangeR(seednum=2, numChanges=5)
         d_2 <- 0.50
         B_2 <- 4.77
@@ -31,6 +30,7 @@ test_that("CUSUM change detection on stream 2", {
 
         cusum2 <- initCUSUMMeanCD(k=d_2, h=B_2, BL=BL2)
         returnList <- cusum2$processVectorSave(stream2)
+        changepointStr <- "tauhat"
         changesDetectedRcpp2 <- returnList[[changepointStr]]
 
         expect_equal(changesDetectedOriginal2-1, changesDetectedRcpp2)
@@ -82,6 +82,7 @@ test_that("checking detectorVector multiple", {
         changesDetectedOriginal1 <- CUSUM_stream_jumpdetect(stream1, BL1,cusumparams1)
 
         returnList<- detectCUSUMMean(x=stream1, k=d_1, h=B_1, BL=BL1, multiple=TRUE)
+        changepointStr <- "tauhat"
         changesDetectedRcpp1 <- returnList[[changepointStr]]
 
         expect_equal(changesDetectedOriginal1-1, changesDetectedRcpp1)
@@ -102,6 +103,8 @@ test_that("checking detectorVector single", {
     changesDetectedOriginal1 <- changesDetectedOriginal1[1]
 
         returnList<- detectCUSUMMean(x=stream1, k=d_1, h=B_1, BL=BL1, single=TRUE)
+
+        changepointStr <- "tauhat"
         changesDetectedRcpp1 <- returnList[[changepointStr]]
         
 
@@ -129,6 +132,8 @@ test_that("checking detectorVector single (v2)", {
     changesDetectedOriginal2 <- changesDetectedOriginal2[1]
 
         returnList<- detectCUSUMMean(x=stream1, k=d_2, h=B_2, BL=BL2, single=TRUE)
+
+        changepointStr <- "tauhat"
         changesDetectedRcpp2 <- returnList[[changepointStr]]
         
         #only check for first element, because single change
@@ -156,6 +161,8 @@ test_that("checking detectorVector single with prechange", {
 
 
         returnList<- detectCUSUMMean(x=stream1, k=d_1, h=B_1, BL=BL1, single=TRUE, usePrechange=TRUE, prechangeMean=mu0, prechangeSigma=sigma0)
+
+        changepointStr <- "tauhat"
         changesDetectedRcpp1 <- returnList[[changepointStr]]
 
 
@@ -184,6 +191,8 @@ test_that("checking detectorVector single with prechange (v2)", {
 
 
         returnList<- detectCUSUMMean(x=stream2, k=d_2, h=B_2, BL=0, single=TRUE, usePrechange=TRUE, prechangeMean=mu0, prechangeSigma=sigma0)
+
+        changepointStr <- "tauhat"
         changesDetectedRcpp2 <- returnList[[changepointStr]]
 
         #only check for first element, because single change

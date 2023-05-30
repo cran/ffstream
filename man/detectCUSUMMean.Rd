@@ -2,18 +2,28 @@
 % Please edit documentation in R/detectCUSUMMeanCDR.R
 \name{detectCUSUMMean}
 \alias{detectCUSUMMean}
-\title{Detect a change/changes in a vector using CUSUM method}
+\title{Detect a change/changes in a vector using 'CUSUM' method}
 \usage{
-detectCUSUMMean(x, k = 0.25, h = 8, BL = 50, multiple = TRUE,
-  single = !multiple, usePrechange = FALSE, prechangeMean = NULL,
-  prechangeSigma = NULL, prechangeVar = NULL, skipCheck = FALSE)
+detectCUSUMMean(
+  x,
+  k = 0.25,
+  h = 8,
+  BL = 50,
+  multiple = TRUE,
+  single = !multiple,
+  usePrechange = FALSE,
+  prechangeMean = NULL,
+  prechangeSigma = NULL,
+  prechangeVar = NULL,
+  skipCheck = FALSE
+)
 }
 \arguments{
 \item{x}{The vector (stream) in which to detect change(s).}
 
-\item{k}{control parameter for CUSUM. Default is \code{0.25}.}
+\item{k}{control parameter for 'CUSUM'. Default is \code{0.25}.}
 
-\item{h}{control parameter for CUSUM. Defqult is \code{8.00}.}
+\item{h}{control parameter for 'CUSUM'. Defqult is \code{8.00}.}
 
 \item{BL}{The burn-in length. Default is \code{BL=50}.}
 
@@ -65,11 +75,11 @@ A list with the following elements:
          }
 }
 \description{
-Given a vector \code{x}, use the CUSUM method to sequentially detect 
+Given a vector \code{x}, use the 'CUSUM' method to sequentially detect 
 changes (or a single change) in the MEAN of the vector.
 }
 \details{
-CUSUM updates via: 
+'CUSUM' updates via: 
          \deqn{S_{j} = \max{0, S_{j-1} + (x_{j} - \mu)/ \sigma - k}}
          and 
          \deqn{T_{j} = \max{0, S_{j-1} - (x_{j} - \mu)/ \sigma - k}}
@@ -77,10 +87,10 @@ CUSUM updates via:
          and variance of the in-control stream, 
          \eqn{x_j} is the observation at time \eqn{j}
          and \eqn{k} 
-         is a control parameter for CUSUM. Then, a change is signalled
+         is a control parameter for 'CUSUM'. Then, a change is signalled
          if \eqn{S_j > h} or \eqn{T_j > h},
          where \eqn{h} is the other control parameter. This is the 
-         formulation for using CUSUM to detect an increase or decrease
+         formulation for using 'CUSUM' to detect an increase or decrease
          in the mean.
 }
 \section{Author}{

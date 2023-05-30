@@ -32,6 +32,7 @@ FFF::FFF(double lambda_) : lambda(lambda_),
 
 //the simple update mechanism
 void FFF::update(double obs){
+    //TODO: probably do not need M anymore
     updateM(obs);
     updateW();
     //order is important - need to update w first

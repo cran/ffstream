@@ -4,8 +4,13 @@
 \alias{makeStreamMeanChangeR}
 \title{Create a stream with a certain number of changes}
 \usage{
-makeStreamMeanChangeR(numChanges = 3, regimeLength = 150, seednum = NULL,
-  mu0 = 0, sigma0 = 1)
+makeStreamMeanChangeR(
+  numChanges = 3,
+  regimeLength = 150,
+  seednum = NULL,
+  mu0 = 0,
+  sigma0 = 1
+)
 }
 \arguments{
 \item{regimeLength}{The number of observations between changepoints

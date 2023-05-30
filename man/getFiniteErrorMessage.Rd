@@ -4,8 +4,12 @@
 \alias{getFiniteErrorMessage}
 \title{Create the error message for a certain parameter that is not finite}
 \usage{
-getFiniteErrorMessage(paramName, value = NULL, algoName = NULL,
-  functionName = "")
+getFiniteErrorMessage(
+  paramName,
+  value = NULL,
+  algoName = NULL,
+  functionName = ""
+)
 }
 \arguments{
 \item{paramName}{Name of parameter, e.g. \code{lambda}}

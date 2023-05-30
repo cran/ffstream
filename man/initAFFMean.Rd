@@ -10,6 +10,9 @@ initAFFMean(eta = 0.1)
 \item{eta}{The value of the step size in the gradient descent. 
 Default is eta=0.01.}
 }
+\value{
+An AFF object.
+}
 \description{
 This function makes it simple to initalise an AFF object.
 }

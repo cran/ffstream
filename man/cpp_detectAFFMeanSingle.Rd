@@ -24,6 +24,6 @@ A list with
 \description{
 Given a vector \code{x}, a threshold \code{alpha}, a step size \code{eta}, 
 and a burn-in length \code{BL}, returns a list containing the single 
-changepoint. Algorithm is implemented in C++.
+changepoint. Algorithm is implemented in 'C++'.
 }
 \keyword{internal}

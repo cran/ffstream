@@ -2,9 +2,12 @@
 % Please edit documentation in R/ffstream-package.R
 \name{ffstream_vignette}
 \alias{ffstream_vignette}
-\title{ffstream vignette 0.1.6}
+\title{ffstream vignette 0.1.7}
 \usage{
 ffstream_vignette()
+}
+\value{
+Does not return anything.
 }
 \description{
 This function opens the ffstream vignette.

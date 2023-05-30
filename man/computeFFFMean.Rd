@@ -13,11 +13,14 @@ a vector of one element (zero)}
 \item{lambda}{Value for the fixed forgetting factor in \eqn{[0,1]}.
 Default is \code{lambda=0.99}.}
 }
+\value{
+The fixed forgetting factor mean (scalar).
+}
 \description{
 Given a vector \code{x} and a value \code{lambda} for a fixed forgetting
 factor, returns the value of the fixed forgetting factor mean
 \eqn{\bar{x}_{N, \lambda}}, where \eqn{N} is the length of \code{x}.
-Algorithm is implemented in C++.
+Algorithm is implemented in 'C++'.
 }
 \section{Author}{
 

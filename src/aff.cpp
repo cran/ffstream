@@ -56,6 +56,7 @@ void AFF::update(double obs){
 
     //now update lambda
     computeXbarDeriv();
+    //TODO: fix this setting of 1.0
     updateLambda(1.0);
 }
 

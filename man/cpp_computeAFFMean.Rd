@@ -16,6 +16,6 @@ Given a vector \code{x} and a value \code{eta} for step size
 in the stochastic gradient descent for the adaptive forgetting
 factor, this returns the value of the fixed forgetting factor mean
 \eqn{\bar{x}_{N, \overrightarrow{\lambda} }}, where \eqn{N} is the 
-length of \code{x}. Algorithm is implemented in C++.
+length of \code{x}. Algorithm is implemented in 'C++'.
 }
 \keyword{internal}

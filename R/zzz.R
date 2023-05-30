@@ -10,6 +10,7 @@
 #' @importFrom grDevices dev.new
 #' @importFrom methods new
 #' @importFrom Rcpp cpp_object_initializer
+#' @importFrom utils vignette
 #library(methods)
 #library(Rcpp)
 Rcpp::loadModule("fffmodule", TRUE)

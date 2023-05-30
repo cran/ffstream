@@ -20,7 +20,7 @@ CusumChangeDetector::CusumChangeDetector(double k_, double h_, int BL_) :
 
 
 
-//print the CUSUM values
+//print the 'CUSUM' values
 void CusumChangeDetector::print(){
     Rcpp::Rcout << "k: " << getK() <<  ", h: " << getH() << std::endl;
     Rcpp::Rcout << "S: " << getS() << ", T: " << getT() << std::endl;
@@ -69,7 +69,7 @@ void CusumChangeDetector::cusumUpdate(double obs){
 void CusumChangeDetector::startBurnIn(){
     Detector::startBurnIn();
 
-    //reset the CUSUM and burn-in counter
+    //reset the 'CUSUM' and burn-in counter
     S = INIT_CUSUM_S;
     T = INIT_CUSUM_T;
 }

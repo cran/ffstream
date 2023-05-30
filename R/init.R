@@ -1,4 +1,4 @@
-#will initialise FFF, AFF, FFFCD, AFFCD, CUSUM AND EWMA
+#will initialise FFF, AFF, FFFCD, AFFCD, 'CUSUM' AND EWMA
 
 #functions used from utils.R:
 #   isInBounds()
@@ -13,6 +13,8 @@
 #'
 #' @param lambda The value of the fixed forgetting factor. 
 #'               Default is lambda=1.
+#'
+#' @return A FFF object.
 #'
 #' @examples
 #' library(Rcpp)
@@ -35,6 +37,8 @@ initFFFMean <- function(lambda=1){
 #'
 #' @param eta The value of the step size in the gradient descent. 
 #'            Default is eta=0.01.
+#'
+#' @return An AFF object.
 #'
 #' @examples
 #' library(Rcpp)
@@ -62,6 +66,8 @@ initAFFMean <- function(eta=0.1){
 #'               Default value is \code{lambda=1}.
 #'              
 #' @param BL The length of the burn-in region. Default value is \code{BL=50}.
+#' 
+#' @return A FFF mean change detector object.
 #'              
 #' @examples
 #' library(Rcpp)
@@ -96,6 +102,9 @@ initFFFMeanCD <- function(alpha=0.01, lambda=1, BL=50){
 #'           However, there is an exception: \code{BL=0} also works, but in
 #'           this case the user needs to specify the \code{streamEstMean} and
 #'           \code{streamEstSigma}; see 
+#' 
+#' @return An AFF mean change detector object.
+#'
 #'
 #' @examples
 #' library(Rcpp)
@@ -119,19 +128,21 @@ initAFFMeanCD <- function(alpha=0.01, eta=0.01, BL=50){
 
 
 
-#' Initialisation of CUSUM
+#' Initialisation of 'CUSUM'
 #'
-#' This function makes it simple to initalise a CUSUM object.
+#' This function makes it simple to initalise a 'CUSUM' object.
 #'
 #'
-#' @param k One of the CUSUM control parameters. 
+#' @param k One of the 'CUSUM' control parameters. 
 #'          Default value is \code{k=0.25}.
 #'
-#' @param h One of the CUSUM control parameters. 
+#' @param h One of the 'CUSUM' control parameters. 
 #'          Default value is \code{h=8.00}.
 #'
-#' @param BL The burn-in length to be used with a CUSUM change detector. 
+#' @param BL The burn-in length to be used with a 'CUSUM' change detector. 
 #'           Default value is \code{BL=50}.
+#' 
+#' @return A CUSUM mean change detector object.
 #'
 #' @examples
 #' library(Rcpp)
@@ -151,19 +162,21 @@ initCUSUMMeanCD <- function(k = 0.25, h = 8.00, BL=50){
 
 #' Initialisation of EWMA
 #'
-#' This function makes it simple to initialise a EWMA object.
+#' This function makes it simple to initialise a 'EWMA' object.
 #'
 #'
-#' @param r One of the EWMA control parameters. 
+#' @param r One of the 'EWMA' control parameters. 
 #'          Default value is \code{r=0.20}.
 #'
-#' @param L One of the EWMA control parameters. 
+#' @param L One of the 'EWMA' control parameters. 
 #'          Default value is \code{L=3.00}.
 #'
-#' @param BL The burn-in length to be used with a EWMA change detector. 
+#' @param BL The burn-in length to be used with a 'EWMA' change detector. 
 #'           Default value is \code{BL=50}.
+#' 
+#' @return A EWMA mean change detector object.
 #'
-# @examples
+#' @examples
 #' library(Rcpp)
 #' e1 <- initEWMAMeanCD()                   #initialises with r=0.20, L=3.00
 #'

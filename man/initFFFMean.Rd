@@ -10,6 +10,9 @@ initFFFMean(lambda = 1)
 \item{lambda}{The value of the fixed forgetting factor. 
 Default is lambda=1.}
 }
+\value{
+A FFF object.
+}
 \description{
 This function makes it simple to initalise an FFF mean object.
 }

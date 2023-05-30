@@ -41,7 +41,7 @@ test_that("FFF mean is initialised correctly", {
         ###TESTS THAT PASS
         #----------------------------------#
 
-        #old test assumed nothign was printed
+        #old test assumed nothing was printed
         #expect_that(fff1 <- initFFFMean(), prints_text(""))
         #same as expect_error(..., NA)
         expect_error(fff1 <- initFFFMean(), NA)

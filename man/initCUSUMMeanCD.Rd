@@ -2,22 +2,25 @@
 % Please edit documentation in R/init.R
 \name{initCUSUMMeanCD}
 \alias{initCUSUMMeanCD}
-\title{Initialisation of CUSUM}
+\title{Initialisation of 'CUSUM'}
 \usage{
 initCUSUMMeanCD(k = 0.25, h = 8, BL = 50)
 }
 \arguments{
-\item{k}{One of the CUSUM control parameters. 
+\item{k}{One of the 'CUSUM' control parameters. 
 Default value is \code{k=0.25}.}
 
-\item{h}{One of the CUSUM control parameters. 
+\item{h}{One of the 'CUSUM' control parameters. 
 Default value is \code{h=8.00}.}
 
-\item{BL}{The burn-in length to be used with a CUSUM change detector. 
+\item{BL}{The burn-in length to be used with a 'CUSUM' change detector. 
 Default value is \code{BL=50}.}
 }
+\value{
+A CUSUM mean change detector object.
+}
 \description{
-This function makes it simple to initalise a CUSUM object.
+This function makes it simple to initalise a 'CUSUM' object.
 }
 \examples{
 library(Rcpp)

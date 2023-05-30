@@ -24,10 +24,10 @@ A list with
 \description{
 Given a vector \code{x}, control parameters \code{k} and \code{h},
 and a burn-in length \code{BL}, returns a list containing the changepoints.
-Algorithm is implemented in C++.
+Algorithm is implemented in 'C++'.
 }
 \details{
-CUSUM updates via: 
+'CUSUM' updates via: 
          \deqn{S_{j} = \max{0, S_{j-1} + (x_{j} - \mu)/ \sigma - k}}
          where \eqn{\mu} and \eqn{\sigma} are, respectively, the mean 
          and variance of the in-control stream, 
@@ -35,9 +35,9 @@ CUSUM updates via:
          and \eqn{k} 
          is a control parameter for CUSUM. Then, a change is signalled
          if \eqn{S_j > h}, where \eqn{h} is the other control parameter.
-         This is the formulation for using CUSUM to detect an increase
+         This is the formulation for using 'CUSUM' to detect an increase
          in the mean; there is a similar formulation for detecting a 
-         decrease, and usually CUSUM is two-sided (monitors for an 
+         decrease, and usually 'CUSUM' is two-sided (monitors for an 
          increase and a decrease in the mean).
 }
 \keyword{internal}

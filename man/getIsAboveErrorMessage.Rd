@@ -4,8 +4,13 @@
 \alias{getIsAboveErrorMessage}
 \title{Create the error message for a certain parameter not above a threshold}
 \usage{
-getIsAboveErrorMessage(paramName, value = NULL, lowerBound, algoName = NULL,
-  functionName = "")
+getIsAboveErrorMessage(
+  paramName,
+  value = NULL,
+  lowerBound,
+  algoName = NULL,
+  functionName = ""
+)
 }
 \arguments{
 \item{paramName}{Name of parameter, e.g. \code{lambda}}

@@ -4,9 +4,19 @@
 \alias{detectAFFMean}
 \title{Detect a change/changes in a vector using AFF method}
 \usage{
-detectAFFMean(x, alpha = 0.01, eta = 0.01, BL = 50, multiple = TRUE,
-  single = !multiple, usePrechange = FALSE, prechangeMean = NULL,
-  prechangeSigma = NULL, prechangeVar = NULL, skipCheck = FALSE)
+detectAFFMean(
+  x,
+  alpha = 0.01,
+  eta = 0.01,
+  BL = 50,
+  multiple = TRUE,
+  single = !multiple,
+  usePrechange = FALSE,
+  prechangeMean = NULL,
+  prechangeSigma = NULL,
+  prechangeVar = NULL,
+  skipCheck = FALSE
+)
 }
 \arguments{
 \item{x}{The vector (stream) in which to detect change(s).}

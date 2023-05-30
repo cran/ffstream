@@ -13,7 +13,7 @@
 //'
 //' Given a vector \code{x}, a threshold \code{alpha}, a value \code{lambda},
 //' and a burn-in length \code{BL}, returns a list containing the changepoints.
-//' Algorithm is implemented in C++.
+//' Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'
@@ -43,7 +43,7 @@ Rcpp::List cpp_detectFFFMeanMultiple(Rcpp::NumericVector x, double lambda, doubl
 //'
 //' Given a vector \code{x}, a threshold \code{alpha}, a value \code{lambda},
 //' and a burn-in length \code{BL}, returns a list containing the single 
-//' changepoint. Algorithm is implemented in C++.
+//' changepoint. Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'
@@ -73,7 +73,7 @@ Rcpp::List cpp_detectFFFMeanSingle(Rcpp::NumericVector x, double lambda, double 
 //'
 //' Given a vector \code{x}, a value \code{lambda}, a threshold \code{alpha},
 //' and values for known prechange mean and variance, returns a list containing 
-//' the single changepoint. Algorithm is implemented in C++.
+//' the single changepoint. Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'
@@ -120,7 +120,7 @@ Rcpp::List cpp_detectFFFMeanSinglePrechange(Rcpp::NumericVector x, double lambda
 //'
 //' Given a vector \code{x}, a threshold \code{alpha}, a step size \code{eta}, 
 //' and a burn-in length \code{BL}, returns a list containing the changepoints.
-//' Algorithm is implemented in C++.
+//' Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'
@@ -150,7 +150,7 @@ Rcpp::List cpp_detectAFFMeanMultiple(Rcpp::NumericVector x, double alpha, double
 //'
 //' Given a vector \code{x}, a threshold \code{alpha}, a step size \code{eta}, 
 //' and a burn-in length \code{BL}, returns a list containing the single 
-//' changepoint. Algorithm is implemented in C++.
+//' changepoint. Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //' 
@@ -180,7 +180,7 @@ Rcpp::List cpp_detectAFFMeanSingle(Rcpp::NumericVector x, double alpha, double e
 //'
 //' Given a vector \code{x}, a threshold \code{alpha}, a step size \code{eta}, 
 //' and a burn-in length BL, returns a list containing the single changepoint.
-//' Algorithm is implemented in C++.
+//' Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'
@@ -218,7 +218,7 @@ Rcpp::List cpp_detectAFFMeanSinglePrechange(Rcpp::NumericVector x, double alpha,
 //'
 //' Given a vector \code{x}, control parameters \code{k} and \code{h},
 //' and a burn-in length \code{BL}, returns a list containing the changepoints.
-//' Algorithm is implemented in C++.
+//' Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'
@@ -228,7 +228,7 @@ Rcpp::List cpp_detectAFFMeanSinglePrechange(Rcpp::NumericVector x, double alpha,
 //'
 //' @param BL Value for the burn-in length.
 //' 
-//' @details CUSUM updates via: 
+//' @details 'CUSUM' updates via: 
 //'          \deqn{S_{j} = \max{0, S_{j-1} + (x_{j} - \mu)/ \sigma - k}}
 //'          where \eqn{\mu} and \eqn{\sigma} are, respectively, the mean 
 //'          and variance of the in-control stream, 
@@ -236,9 +236,9 @@ Rcpp::List cpp_detectAFFMeanSinglePrechange(Rcpp::NumericVector x, double alpha,
 //'          and \eqn{k} 
 //'          is a control parameter for CUSUM. Then, a change is signalled
 //'          if \eqn{S_j > h}, where \eqn{h} is the other control parameter.
-//'          This is the formulation for using CUSUM to detect an increase
+//'          This is the formulation for using 'CUSUM' to detect an increase
 //'          in the mean; there is a similar formulation for detecting a 
-//'          decrease, and usually CUSUM is two-sided (monitors for an 
+//'          decrease, and usually 'CUSUM' is two-sided (monitors for an 
 //'          increase and a decrease in the mean).
 //' 
 //' @return A list with 
@@ -263,7 +263,7 @@ Rcpp::List cpp_detectCUSUMMeanMultiple(Rcpp::NumericVector x, double k, double h
 //'
 //' Given a vector \code{x}, control parameters \code{k} and \code{h},
 //' and a burn-in length \code{BL}, returns a list containing the changepoints.
-//' Algorithm is implemented in C++.
+//' Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'
@@ -273,7 +273,7 @@ Rcpp::List cpp_detectCUSUMMeanMultiple(Rcpp::NumericVector x, double k, double h
 //'
 //' @param BL Value for the burn-in length.
 //' 
-//' @details CUSUM updates via: 
+//' @details 'CUSUM' updates via: 
 //'          \deqn{S_{j} = \max{0, S_{j-1} + (x_{j} - \mu)/ \sigma - k}}
 //'          where \eqn{\mu} and \eqn{\sigma} are, respectively, the mean 
 //'          and variance of the in-control stream, 
@@ -281,9 +281,9 @@ Rcpp::List cpp_detectCUSUMMeanMultiple(Rcpp::NumericVector x, double k, double h
 //'          and \eqn{k} 
 //'          is a control parameter for CUSUM. Then, a change is signalled
 //'          if \eqn{S_j > h}, where \eqn{h} is the other control parameter.
-//'          This is the formulation for using CUSUM to detect an increase
+//'          This is the formulation for using 'CUSUM' to detect an increase
 //'          in the mean; there is a similar formulation for detecting a 
-//'          decrease, and usually CUSUM is two-sided (monitors for an 
+//'          decrease, and usually 'CUSUM' is two-sided (monitors for an 
 //'          increase and a decrease in the mean).
 //' 
 //' @return A list with 
@@ -306,7 +306,7 @@ Rcpp::List cpp_detectCUSUMMeanSingle(Rcpp::NumericVector x, double k, double h, 
 //'
 //' Given a vector \code{x}, control parameters \code{k} and \code{h},
 //' and a burn-in length \code{BL}, returns a list containing the changepoints.
-//' Algorithm is implemented in C++.
+//' Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'
@@ -316,7 +316,7 @@ Rcpp::List cpp_detectCUSUMMeanSingle(Rcpp::NumericVector x, double k, double h, 
 //'
 //' @param BL Value for the burn-in length.
 //' 
-//' @details CUSUM updates via: 
+//' @details 'CUSUM' updates via: 
 //'          \deqn{S_{j} = \max{0, S_{j-1} + (x_{j} - \mu)/ \sigma - k}}
 //'          where \eqn{\mu} and \eqn{\sigma} are, respectively, the mean 
 //'          and variance of the in-control stream, 
@@ -324,9 +324,9 @@ Rcpp::List cpp_detectCUSUMMeanSingle(Rcpp::NumericVector x, double k, double h, 
 //'          and \eqn{k} 
 //'          is a control parameter for CUSUM. Then, a change is signalled
 //'          if \eqn{S_j > h}, where \eqn{h} is the other control parameter.
-//'          This is the formulation for using CUSUM to detect an increase
+//'          This is the formulation for using 'CUSUM' to detect an increase
 //'          in the mean; there is a similar formulation for detecting a 
-//'          decrease, and usually CUSUM is two-sided (monitors for an 
+//'          decrease, and usually 'CUSUM' is two-sided (monitors for an 
 //'          increase and a decrease in the mean).
 //' 
 //' @return A list with 
@@ -355,7 +355,7 @@ Rcpp::List cpp_detectCUSUMMeanSinglePrechange(Rcpp::NumericVector x, double k, d
 //'
 //' Given a vector \code{x}, control parameters \code{r} and \code{L},
 //' and a burn-in length \code{BL}, returns a list containing the changepoints.
-//' Algorithm is implemented in C++.
+//' Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'
@@ -365,7 +365,7 @@ Rcpp::List cpp_detectCUSUMMeanSinglePrechange(Rcpp::NumericVector x, double k, d
 //'
 //' @param BL Value for the burn-in length.
 //' 
-//' @details EWMA updates via: 
+//' @details 'EWMA' updates via: 
 //'          \deqn{Z_{j} = (1-r) Z_{j-1} + r x_{j}}
 //'          where \eqn{\mu} is the mean of the in-control stream, 
 //'          \eqn{x_j} is the observation at time \eqn{j} and \eqn{r} 
@@ -374,7 +374,7 @@ Rcpp::List cpp_detectCUSUMMeanSinglePrechange(Rcpp::NumericVector x, double k, d
 //'          where \eqn{L} is the other control parameter, and 
 //'          \eqn{\sigma_{Z_j}} is a scaled version of the in-control
 //'          variance \eqn{\sigma}.
-//'          This is the formulation for using EWMA to detect an increase or
+//'          This is the formulation for using 'EWMA' to detect an increase or
 //'          decrease in the mean.
 //' 
 //' @return A list with 
@@ -397,7 +397,7 @@ Rcpp::List cpp_detectEWMAMeanMultiple(Rcpp::NumericVector x, double r, double L,
 //'
 //' Given a vector \code{x}, control parameters \code{r} and \code{L},
 //' and a burn-in length \code{BL}, returns a list containing the changepoints.
-//' Algorithm is implemented in C++.
+//' Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'
@@ -407,7 +407,7 @@ Rcpp::List cpp_detectEWMAMeanMultiple(Rcpp::NumericVector x, double r, double L,
 //'
 //' @param BL Value for the burn-in length.
 //' 
-//' @details EWMA updates via: 
+//' @details 'EWMA' updates via: 
 //'          \deqn{Z_{j} = (1-r) Z_{j-1} + r x_{j}}
 //'          where \eqn{\mu} is the mean of the in-control stream, 
 //'          \eqn{x_j} is the observation at time \eqn{j} and \eqn{r} 
@@ -416,7 +416,7 @@ Rcpp::List cpp_detectEWMAMeanMultiple(Rcpp::NumericVector x, double r, double L,
 //'          where \eqn{L} is the other control parameter, and 
 //'          \eqn{\sigma_{Z_j}} is a scaled version of the in-control
 //'          variance \eqn{\sigma}.
-//'          This is the formulation for using EWMA to detect an increase or
+//'          This is the formulation for using 'EWMA' to detect an increase or
 //'          decrease in the mean.
 //' 
 //' @return A list with 
@@ -439,7 +439,7 @@ Rcpp::List cpp_detectEWMAMeanSingle(Rcpp::NumericVector x, double r, double L, i
 //'
 //' Given a vector \code{x}, control parameters \code{r} and \code{L},
 //' and a burn-in length \code{BL}, returns a list containing the changepoints.
-//' Algorithm is implemented in C++.
+//' Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'
@@ -449,7 +449,7 @@ Rcpp::List cpp_detectEWMAMeanSingle(Rcpp::NumericVector x, double r, double L, i
 //'
 //' @param BL Value for the burn-in length.
 //' 
-//' @details EWMA updates via: 
+//' @details 'EWMA' updates via: 
 //'          \deqn{Z_{j} = (1-r) Z_{j-1} + r x_{j}}
 //'          where \eqn{\mu} is the mean of the in-control stream, 
 //'          \eqn{x_j} is the observation at time \eqn{j} and \eqn{r} 
@@ -458,7 +458,7 @@ Rcpp::List cpp_detectEWMAMeanSingle(Rcpp::NumericVector x, double r, double L, i
 //'          where \eqn{L} is the other control parameter, and 
 //'          \eqn{\sigma_{Z_j}} is a scaled version of the in-control
 //'          variance \eqn{\sigma}.
-//'          This is the formulation for using EWMA to detect an increase or
+//'          This is the formulation for using 'EWMA' to detect an increase or
 //'          decrease in the mean.
 //' 
 //' @return A list with 

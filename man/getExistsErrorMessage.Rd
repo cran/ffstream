@@ -4,8 +4,12 @@
 \alias{getExistsErrorMessage}
 \title{Create the error message for a certain parameter that does not exist}
 \usage{
-getExistsErrorMessage(paramName, value = NULL, algoName = NULL,
-  functionName = "")
+getExistsErrorMessage(
+  paramName,
+  value = NULL,
+  algoName = NULL,
+  functionName = ""
+)
 }
 \arguments{
 \item{paramName}{Name of parameter, e.g. \code{lambda}}

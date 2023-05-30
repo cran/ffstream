@@ -479,14 +479,14 @@ checkAFFMeanCDargs <- function(alpha, eta, BL, functionName=""){
 
 
 
-#' Check the arguments for CUSUM mean change detector
+#' Check the arguments for 'CUSUM' mean change detector
 #'
 #' A function which will do all the checks for AFF, check the parameters
 #' are in the proper ranges, etc. Does not return any values.
 #'
-#' @param k One of the CUSUM control parameters. Must be finite, etc.
+#' @param k One of the 'CUSUM' control parameters. Must be finite, etc.
 #'
-#' @param h One of the CUSUM control parameters. Must be finite, etc.
+#' @param h One of the 'CUSUM' control parameters. Must be finite, etc.
 #'
 #' @param BL The value of the burn-in length. Must be finite, above 0, etc.
 #'
@@ -501,18 +501,18 @@ checkCUSUMMeanCDargs <- function(k, h, BL, functionName=""){
     #check it is numeric, else warning
     #is.finite better than is.numeric, because is.numeric return TRUE for NaN
     if (! (is.finite(k))){
-        stop(getFiniteErrorMessage(paramName="k", algoName="CUSUM change detector", functionName=functionName), call.=FALSE)
+        stop(getFiniteErrorMessage(paramName="k", algoName="'CUSUM' change detector", functionName=functionName), call.=FALSE)
     }
     if (! (is.finite(h))){
-        stop(getFiniteErrorMessage(paramName="h", algoName="CUSUM change detector", functionName=functionName), call.=FALSE)
+        stop(getFiniteErrorMessage(paramName="h", algoName="'CUSUM' change detector", functionName=functionName), call.=FALSE)
     }
     #BL must be finite
     if (! (is.finite(BL)) ){
-        stop(getFiniteErrorMessage(paramName="BL", algoName="CUSUM change detector", functionName=functionName), call.=FALSE)
+        stop(getFiniteErrorMessage(paramName="BL", algoName="'CUSUM' change detector", functionName=functionName), call.=FALSE)
     }
     #BL must be above min, and truncated
     if ( !(isAboveBound(BL, BLMIN)) ){
-        stop(getIsAboveErrorMessage(paramName="BL", lowerBound=BLMIN, algoName="CUSUM change detector",functionName=functionName), call.=FALSE)
+        stop(getIsAboveErrorMessage(paramName="BL", lowerBound=BLMIN, algoName="'CUSUM' change detector",functionName=functionName), call.=FALSE)
     }
     #BL must be an integer - so force truncation
     BL <- trunc(BL)
@@ -522,14 +522,14 @@ checkCUSUMMeanCDargs <- function(k, h, BL, functionName=""){
 
 
 
-#' Check the arguments for EWMA mean change detector
+#' Check the arguments for 'EWMA' mean change detector
 #'
 #' A function which will do all the checks for AFF, check the parameters
 #' are in the proper ranges, etc. Does not return any values.
 #'
-#' @param r One of the EWMA control parameters. Must be finite, etc.
+#' @param r One of the 'EWMA' control parameters. Must be finite, etc.
 #'
-#' @param L One of the EWMA control parameters. Must be finite, etc.
+#' @param L One of the 'EWMA' control parameters. Must be finite, etc.
 #'
 #' @param BL The value of the burn-in length. Must be finite, above 0, etc.
 #'
@@ -554,19 +554,19 @@ checkEWMAMeanCDargs <- function(r, L, BL, functionName=""){
             stop(getInBoundsErrorMessage(paramName="r", value=r, lowerBound=RMIN, upperBound=RMAX, algoName="EWMA", functionName=functionName), call.=FALSE)
         }
     } else{
-        stop(getFiniteErrorMessage(paramName="r", algoName="EWMA change detector", functionName=functionName), call.=FALSE)
+        stop(getFiniteErrorMessage(paramName="r", algoName="'EWMA' change detector", functionName=functionName), call.=FALSE)
     }
 
     if (! (is.finite(L))){
-        stop(getFiniteErrorMessage(paramName="L", algoName="EWMA change detector", functionName=functionName), call.=FALSE)
+        stop(getFiniteErrorMessage(paramName="L", algoName="'EWMA' change detector", functionName=functionName), call.=FALSE)
     }
     #BL must be finite
     if (! (is.finite(BL)) ){
-        stop(getFiniteErrorMessage(paramName="BL", algoName="EWMA change detector", functionName=functionName), call.=FALSE)
+        stop(getFiniteErrorMessage(paramName="BL", algoName="'EWMA' change detector", functionName=functionName), call.=FALSE)
     }
     #BL must be above min, and truncated
     if ( !(isAboveBound(BL, BLMIN)) ){
-        stop(getIsAboveErrorMessage(paramName="BL", lowerBound=BLMIN, algoName="EWMA change detector",functionName=functionName), call.=FALSE)
+        stop(getIsAboveErrorMessage(paramName="BL", lowerBound=BLMIN, algoName="'EWMA' change detector",functionName=functionName), call.=FALSE)
     }
     #BL must be an integer - so force truncation
     BL <- trunc(BL)
@@ -668,6 +668,19 @@ checkBooleans <- function(multiple, single, usePrechange, skipCheck, functionNam
         message <- paste0(functionName, " - 'skipCheck' is not a boolean - initialisation failed.")
         stop(message)
     }
+
+    # Cannot use multiple=TRUE and usePrechange=TRUE
+    # Must use burn-in for multiple.
+    # Because even if prechange values were known,  before the first change,
+    # they would probably not be known for the second change.
+    # It is possible that support may be added for this later, but not now.
+    if (  (usePrechange==TRUE) && (single==FALSE) ){
+        message1 <- paste0("using prechange values with multiple changepoint detection is disabled. ")
+        message2 <- paste0("Either use 'single=TRUE' when using prechange values, or do not use prechange values.")
+        message <- paste0(functionName, " - ", message1, message2, " - initialisation failed.")
+        stop(message)
+    }
+
 }
 
 

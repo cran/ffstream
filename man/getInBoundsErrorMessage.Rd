@@ -4,8 +4,15 @@
 \alias{getInBoundsErrorMessage}
 \title{Create the error message for a certain parameter outside its bounds}
 \usage{
-getInBoundsErrorMessage(paramName, value = NULL, lowerBound, upperBound,
-  algoName = NULL, strictly = FALSE, functionName = "")
+getInBoundsErrorMessage(
+  paramName,
+  value = NULL,
+  lowerBound,
+  upperBound,
+  algoName = NULL,
+  strictly = FALSE,
+  functionName = ""
+)
 }
 \arguments{
 \item{paramName}{Name of parameter, e.g. \code{lambda}}

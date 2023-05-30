@@ -2,7 +2,7 @@
 % Please edit documentation in R/originalRcode.R
 \name{CUSUM_stream_jumpdetect}
 \alias{CUSUM_stream_jumpdetect}
-\title{CUSUM change detection for a stream in R}
+\title{'CUSUM' change detection for a stream in R}
 \usage{
 CUSUM_stream_jumpdetect(stream, BL, params)
 }
@@ -11,7 +11,7 @@ CUSUM_stream_jumpdetect(stream, BL, params)
 
 \item{BL}{The burn-in length, used to estimate the mean and variance.}
 
-\item{params}{A list of parameters for the CUSUM algorithm. Consists of
+\item{params}{A list of parameters for the 'CUSUM' algorithm. Consists of
              \describe{
                  \item{\code{d}}{A control parameter also known as 
                                  \eqn{k}.}
@@ -24,7 +24,7 @@ CUSUM_stream_jumpdetect(stream, BL, params)
 A vector of estimated changepoints.
 }
 \description{
-Original implementation in R of CUSUM change detector, now with
+Original implementation in R of 'CUSUM' change detector, now with
 documentation.
 }
 \section{Author}{

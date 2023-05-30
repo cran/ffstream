@@ -24,10 +24,10 @@ A list with
 \description{
 Given a vector \code{x}, control parameters \code{r} and \code{L},
 and a burn-in length \code{BL}, returns a list containing the changepoints.
-Algorithm is implemented in C++.
+Algorithm is implemented in 'C++'.
 }
 \details{
-EWMA updates via: 
+'EWMA' updates via: 
          \deqn{Z_{j} = (1-r) Z_{j-1} + r x_{j}}
          where \eqn{\mu} is the mean of the in-control stream, 
          \eqn{x_j} is the observation at time \eqn{j} and \eqn{r} 
@@ -36,7 +36,7 @@ EWMA updates via:
          where \eqn{L} is the other control parameter, and 
          \eqn{\sigma_{Z_j}} is a scaled version of the in-control
          variance \eqn{\sigma}.
-         This is the formulation for using EWMA to detect an increase or
+         This is the formulation for using 'EWMA' to detect an increase or
          decrease in the mean.
 }
 \keyword{internal}

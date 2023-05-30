@@ -1,6 +1,6 @@
-#' CUSUM change detection for a stream in R 
+#' 'CUSUM' change detection for a stream in R 
 #'
-#' Original implementation in R of CUSUM change detector, now with
+#' Original implementation in R of 'CUSUM' change detector, now with
 #' documentation.
 #'
 #'
@@ -8,7 +8,7 @@
 #'
 #' @param BL The burn-in length, used to estimate the mean and variance.
 #'
-#' @param params A list of parameters for the CUSUM algorithm. Consists of
+#' @param params A list of parameters for the 'CUSUM' algorithm. Consists of
 #'              \describe{
 #'                  \item{\code{d}}{A control parameter also known as 
 #'                                  \eqn{k}.}
@@ -95,7 +95,7 @@ CUSUM_stream_jumpdetect <- function(stream, BL, params){
 
 		} #end of for BL
 		
-		#set values for CUSUM mean and variance
+		#set values for 'CUSUM' mean and variance
 		mean_j <- mean_new
 		var_j <- var_new
 		sd_j <- sqrt(var_j)
@@ -106,7 +106,7 @@ CUSUM_stream_jumpdetect <- function(stream, BL, params){
 		#----------end of Phase 1: burn-in----------#
 		#--------------------------------------------------------------------#
 		#Phase 2: detect change
-		#CUSUM starts, sample from distribution 1
+		# 'CUSUM' starts, sample from distribution 1
 		S_j <- 0
 		T_j <- 0
 		#jump_found is a boolean that flags if a jump is detected
@@ -157,7 +157,7 @@ CUSUM_stream_jumpdetect <- function(stream, BL, params){
 	detect_pos_vec <- detect_pos_vec[1:detected_count]
 	return(detect_pos_vec)
 	
-} # end of CUSUM detect
+} # end of 'CUSUM' detect
 
 
 
@@ -165,9 +165,9 @@ CUSUM_stream_jumpdetect <- function(stream, BL, params){
 
 
 
-#' EWMA change detection for a stream in R with 
+#' 'EWMA' change detection for a stream in R with 
 #'
-#' Original implementation in R of EWMA change detector, now with
+#' Original implementation in R of 'EWMA' change detector, now with
 #' documentation.
 #'
 #'
@@ -175,7 +175,7 @@ CUSUM_stream_jumpdetect <- function(stream, BL, params){
 #'
 #' @param BL The burn-in length, used to estimate the mean and variance.
 #'
-#' @param params A list of parameters for the EWMA algorithm. Consists of
+#' @param params A list of parameters for the 'EWMA' algorithm. Consists of
 #'              \describe{
 #'                  \item{\code{r}}{A control parameter which controls
 #'                                  the rate of downweighting.}
@@ -265,11 +265,11 @@ EWMA_stream_jumpdetect <- function(stream, BL, params){
 
 		} #end of for BL
 		
-		#set values for EWMA mean and variance
+		#set values for 'EWMA' mean and variance
 		mu_1 <- mean_new
 		sigma1_sq <- var_new
 		sigma_1 <- sqrt(sigma1_sq)
-		#set EWMA control limits
+		#set 'EWMA' control limits
 		#UL: upperlimit
 		UL <- mu_1 + L * sigma_1 * delta
 		#LL: lowerlimit
@@ -319,7 +319,7 @@ EWMA_stream_jumpdetect <- function(stream, BL, params){
 	#trim detect_pos_vec
 	detect_pos_vec <- detect_pos_vec[1:detected_count]
 	return(detect_pos_vec)	
-}#end of EWMA jump detect
+}#end of 'EWMA' jump detect
 
 
 

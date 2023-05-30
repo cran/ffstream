@@ -1,14 +1,14 @@
-#' Detect a change/changes in a vector using CUSUM method
+#' Detect a change/changes in a vector using 'CUSUM' method
 #'
-#' Given a vector \code{x}, use the CUSUM method to sequentially detect 
+#' Given a vector \code{x}, use the 'CUSUM' method to sequentially detect 
 #' changes (or a single change) in the MEAN of the vector. 
 #'
 #'
 #' @param x The vector (stream) in which to detect change(s).
 #'
-#' @param k control parameter for CUSUM. Default is \code{0.25}.
+#' @param k control parameter for 'CUSUM'. Default is \code{0.25}.
 #'
-#' @param h control parameter for CUSUM. Defqult is \code{8.00}.
+#' @param h control parameter for 'CUSUM'. Defqult is \code{8.00}.
 #'
 #' @param BL The burn-in length. Default is \code{BL=50}.
 #'
@@ -54,7 +54,7 @@
 #'                   of the stream. Default is \code{FALSE}.
 #'
 #' 
-#' @details CUSUM updates via: 
+#' @details 'CUSUM' updates via: 
 #'          \deqn{S_{j} = \max{0, S_{j-1} + (x_{j} - \mu)/ \sigma - k}}
 #'          and 
 #'          \deqn{T_{j} = \max{0, S_{j-1} - (x_{j} - \mu)/ \sigma - k}}
@@ -62,10 +62,10 @@
 #'          and variance of the in-control stream, 
 #'          \eqn{x_j} is the observation at time \eqn{j}
 #'          and \eqn{k} 
-#'          is a control parameter for CUSUM. Then, a change is signalled
+#'          is a control parameter for 'CUSUM'. Then, a change is signalled
 #'          if \eqn{S_j > h} or \eqn{T_j > h},
 #'          where \eqn{h} is the other control parameter. This is the 
-#'          formulation for using CUSUM to detect an increase or decrease
+#'          formulation for using 'CUSUM' to detect an increase or decrease
 #'          in the mean.
 #'
 #'

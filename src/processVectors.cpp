@@ -23,7 +23,7 @@
 //' Given a vector \code{x} and a value \code{lambda} for a fixed forgetting
 //' factor, returns the value of the fixed forgetting factor mean
 //' \eqn{\bar{x}_{N, \lambda}}, where \eqn{N} is the length of \code{x}.
-//' Algorithm is implemented in C++.
+//' Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'
@@ -51,7 +51,7 @@ double cpp_computeFFFMean(Rcpp::NumericVector x, double lambda){
 //' in the stochastic gradient descent for the adaptive forgetting
 //' factor, this returns the value of the fixed forgetting factor mean
 //' \eqn{\bar{x}_{N, \overrightarrow{\lambda} }}, where \eqn{N} is the 
-//' length of \code{x}. Algorithm is implemented in C++.
+//' length of \code{x}. Algorithm is implemented in 'C++'.
 //'
 //' @param x Vector of numeric values values.
 //'

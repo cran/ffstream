@@ -2,7 +2,7 @@
 % Please edit documentation in R/originalRcode.R
 \name{EWMA_stream_jumpdetect}
 \alias{EWMA_stream_jumpdetect}
-\title{EWMA change detection for a stream in R with}
+\title{'EWMA' change detection for a stream in R with}
 \usage{
 EWMA_stream_jumpdetect(stream, BL, params)
 }
@@ -11,7 +11,7 @@ EWMA_stream_jumpdetect(stream, BL, params)
 
 \item{BL}{The burn-in length, used to estimate the mean and variance.}
 
-\item{params}{A list of parameters for the EWMA algorithm. Consists of
+\item{params}{A list of parameters for the 'EWMA' algorithm. Consists of
              \describe{
                  \item{\code{r}}{A control parameter which controls
                                  the rate of downweighting.}
@@ -24,7 +24,7 @@ EWMA_stream_jumpdetect(stream, BL, params)
 A vector of estimated changepoints.
 }
 \description{
-Original implementation in R of EWMA change detector, now with
+Original implementation in R of 'EWMA' change detector, now with
 documentation.
 }
 \keyword{internal}

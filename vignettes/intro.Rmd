@@ -1,10 +1,10 @@
 ---
-title: "Introduction to ffstream v0.1.6"
+title: "Introduction to ffstream v0.1.7"
 author: "Dean Bodenham"
-date: "12 May 2018"
+date: "25 May 2023"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ffstream_0.1.6}
+  %\VignetteIndexEntry{ffstream_0.1.7}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -19,14 +19,14 @@ library(ffstream)
 
 # Introduction
 
-The `ffstream` package provides an implementation for the Adaptive Forgetting Factor (AFF) change detector [(Bodenham and Adams, 2016)](http://link.springer.com/article/10.1007/s11222-016-9684-8). In fact, the following four online change detection methods are implemented:  
+The `ffstream` package provides an implementation for the Adaptive Forgetting Factor (AFF) change detector [(Bodenham and Adams, 2016)](https://link.springer.com/article/10.1007/s11222-016-9684-8). In fact, the following four online change detection methods are implemented:  
 
 * AFF (Bodenham and Adams, 2016)
 * FFF (Bodenham and Adams, 2016)
-* CUSUM (Page, 1954)
-* EWMA (Roberts, 1959)
+* 'CUSUM' (Page, 1954)
+* 'EWMA' (Roberts, 1959)
 
-While both AFF and FFF were proposed recently, CUSUM and EWMA are classical sequential change detectors from the 1950s. However, since I could not find implementations of CUSUM and EWMA on CRAN, I decided to include them in the ffstream package (they are used as baseline comparison methods in the paper mentioned above, which contains detailed descriptions of all four methods).
+While both AFF and FFF were proposed recently, 'CUSUM' and 'EWMA' are classical sequential change detectors from the 1950s. However, since I could not find implementations of 'CUSUM' and 'EWMA' on CRAN, I decided to include them in the ffstream package (they are used as baseline comparison methods in the paper mentioned above, which contains detailed descriptions of all four methods).
 
 
 ## Demo
@@ -108,10 +108,10 @@ affcd <- initAFFMeanCD(alpha=0.01, eta=0.001, BL=30)
 # initialise a FFF change detector with lambda=0.99, alpha=0.05, and burn-in length 50
 fffcd <- initFFFMeanCD(lambda=0.99, alpha=0.05, BL=50)
 
-# initialise a CUSUM change detector with h=0.50, k=4.77, and burn-in length 70
+# initialise a 'CUSUM' change detector with h=0.50, k=4.77, and burn-in length 70
 cusumcd <- initCUSUMMeanCD(h=0.50, k=4.77, BL=70)
 
-# initialise a EWMA change detector with r=0.25, L=3.023, and burn-in length 50
+# initialise a 'EWMA' change detector with r=0.25, L=3.023, and burn-in length 50
 ewmacd <- initEWMAMeanCD(r=0.25, L=3.023, BL=50)
 ```
 
@@ -204,7 +204,7 @@ list_aff2 <- detectAFFMean(x, alpha=0.01, eta=0.01, BL=50, single=TRUE)
 list_aff3 <- detectAFFMean(x, alpha=0.01, eta=0.01, single=TRUE, prechangeMean=5, prechangeSigma=1)
 
 
-#similar for FFF, CUSUM and EWMA:
+#similar for FFF, 'CUSUM' and EWMA:
 list_fff <- detectFFFMean(x, alpha=0.01, lambda=0.95, BL=50, multiple=TRUE)
 list_cusum <- detectCUSUMMean(x, k=0.25, h=8.00, BL=50, multiple=TRUE)
 list_ewma <- detectEWMAMean(x, r=0.25, L=3.023, BL=50, multiple=TRUE)
@@ -279,7 +279,7 @@ The two initialisation functions are which can be used to compute the AFF mean o
 * `initAFFMean` which allows one to set the value of `eta` (default value `0.01`),  
 * `initFFFMean` which allows one set the value of `lambda` (default value `1`, i.e. no forgetting),  
 
-See [(Bodenham and Adams, 2016)](http://link.springer.com/article/10.1007/s11222-016-9684-8) for further details. 
+See [(Bodenham and Adams, 2016)](https://link.springer.com/article/10.1007/s11222-016-9684-8) for further details. 
 
 
 

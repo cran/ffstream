@@ -1,10 +1,9 @@
-context("Test 10: EWMA change detection")
+context("Test 10: 'EWMA' change detection")
 
 
 library(Rcpp)
-changepointStr <<- "tauhat"
 
-test_that("EWMA change detection on stream 1", {
+test_that("'EWMA' change detection on stream 1", {
         stream1 <- makeStreamMeanChangeR(seednum=1, numChanges=3)
 
         r_1 <- 0.20
@@ -15,6 +14,8 @@ test_that("EWMA change detection on stream 1", {
 
         ewma1 <- initEWMAMeanCD(r = r_1, L = L_1, BL=BL1)
         returnList <- ewma1$processVectorSave(stream1)
+
+        changepointStr <- "tauhat"
         changesDetectedRcpp1 <- returnList[[changepointStr]]
 
         #need to have -1 for R version (change signalled at start of new regime in R
@@ -23,7 +24,7 @@ test_that("EWMA change detection on stream 1", {
         })
 
 
-test_that("EWMA change detection on stream 2", {
+test_that("'EWMA' change detection on stream 2", {
         stream2 <- makeStreamMeanChangeR(seednum=2, numChanges=5)
         r_2 <- 0.05
         L_2 <- 2.615
@@ -33,6 +34,8 @@ test_that("EWMA change detection on stream 2", {
 
         ewma2 <- initEWMAMeanCD(r = r_2, L = L_2, BL=BL2)
         returnList <- ewma2$processVectorSave(stream2)
+
+        changepointStr <- "tauhat"
         changesDetectedRcpp2 <- returnList[[changepointStr]]
         expect_equal(changesDetectedOriginal2-1, changesDetectedRcpp2)
         })
@@ -79,7 +82,7 @@ test_that("checking pval", {
 
 
 
-test_that("EWMA change detection on stream 1", {
+test_that("'EWMA' change detection on stream 1", {
         stream1 <- makeStreamMeanChangeR(seednum=3, numChanges=3)
 
         r_1 <- 0.20
@@ -90,6 +93,8 @@ test_that("EWMA change detection on stream 1", {
 
         ewma1 <- initEWMAMeanCD(r = r_1, L = L_1, BL=BL1)
         returnList <- ewma1$processVectorSave(stream1)
+
+        changepointStr <- "tauhat"
         changesDetectedRcpp1 <- returnList[[changepointStr]]
 
         #need to have -1 for R version (change signalled at start of new regime in R
@@ -109,6 +114,8 @@ test_that("checking detectVector multiple", {
         changesDetectedOriginal1 <- EWMA_stream_jumpdetect(stream1, BL1, ewmaparams1)
 
         returnList <- detectEWMAMean(x=stream1, r=r_1, L=L_1, BL=BL1, multiple=TRUE)
+
+        changepointStr <- "tauhat"
         changesDetectedRcpp1 <- returnList[[changepointStr]]
 
         #need to have -1 for R version (change signalled at start of new regime in R
@@ -130,6 +137,8 @@ test_that("checking detectorVector single", {
     changesDetectedOriginal1 <- changesDetectedOriginal1[1]
 
         returnList<- detectEWMAMean(x=stream1, r=r_1, L=L_1, BL=BL1, single=TRUE)
+
+        changepointStr <- "tauhat"
         changesDetectedRcpp1 <- returnList[[changepointStr]]
         
 
@@ -151,6 +160,8 @@ test_that("checking detectorVector single (v2)", {
     changesDetectedOriginal1 <- changesDetectedOriginal1[1]
 
         returnList<- detectEWMAMean(x=stream1, r=r_1, L=L_1, BL=BL1, single=TRUE)
+
+        changepointStr <- "tauhat"
         changesDetectedRcpp1 <- returnList[[changepointStr]]
         
 
@@ -179,6 +190,8 @@ test_that("checking detectorVector single with prechange", {
 
 
         returnList<- detectEWMAMean(x=stream1, r=r_1, L=L_1, BL=0, single=TRUE, usePrechange=TRUE, prechangeMean=mu0, prechangeSigma=sigma0)
+
+        changepointStr <- "tauhat"
         changesDetectedRcpp1 <- returnList[[changepointStr]]
 
 
@@ -208,6 +221,8 @@ test_that("checking detectorVector single with prechange (v2)", {
 
 
         returnList<- detectEWMAMean(x=stream1, r=r_1, L=L_1, BL=BL1, single=TRUE, usePrechange=TRUE, prechangeMean=mu0, prechangeSigma=sigma0)
+
+        changepointStr <- "tauhat"
         changesDetectedRcpp1 <- returnList[[changepointStr]]
 
 

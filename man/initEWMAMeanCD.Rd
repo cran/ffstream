@@ -7,20 +7,25 @@
 initEWMAMeanCD(r = 0.2, L = 3, BL = 50)
 }
 \arguments{
-\item{r}{One of the EWMA control parameters. 
+\item{r}{One of the 'EWMA' control parameters. 
 Default value is \code{r=0.20}.}
 
-\item{L}{One of the EWMA control parameters. 
+\item{L}{One of the 'EWMA' control parameters. 
 Default value is \code{L=3.00}.}
 
-\item{BL}{The burn-in length to be used with a EWMA change detector. 
-          Default value is \code{BL=50}.
-
+\item{BL}{The burn-in length to be used with a 'EWMA' change detector. 
+Default value is \code{BL=50}.}
+}
+\value{
+A EWMA mean change detector object.
+}
+\description{
+This function makes it simple to initialise a 'EWMA' object.
+}
+\examples{
 library(Rcpp)
 e1 <- initEWMAMeanCD()                   #initialises with r=0.20, L=3.00
 
-e1 <- initEWMAMeanCD(r=0.05, L=0.275)    #initialises with r=0.20, L=3.00}
-}
-\description{
-This function makes it simple to initialise a EWMA object.
+e1 <- initEWMAMeanCD(r=0.05, L=0.275)    #initialises with r=0.20, L=3.00
+
 }

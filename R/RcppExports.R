@@ -5,7 +5,7 @@
 #'
 #' Given a vector \code{x}, a threshold \code{alpha}, a value \code{lambda},
 #' and a burn-in length \code{BL}, returns a list containing the changepoints.
-#' Algorithm is implemented in C++.
+#' Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'
@@ -31,7 +31,7 @@ cpp_detectFFFMeanMultiple <- function(x, lambda, alpha, BL) {
 #'
 #' Given a vector \code{x}, a threshold \code{alpha}, a value \code{lambda},
 #' and a burn-in length \code{BL}, returns a list containing the single 
-#' changepoint. Algorithm is implemented in C++.
+#' changepoint. Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'
@@ -57,7 +57,7 @@ cpp_detectFFFMeanSingle <- function(x, lambda, alpha, BL) {
 #'
 #' Given a vector \code{x}, a value \code{lambda}, a threshold \code{alpha},
 #' and values for known prechange mean and variance, returns a list containing 
-#' the single changepoint. Algorithm is implemented in C++.
+#' the single changepoint. Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'
@@ -85,7 +85,7 @@ cpp_detectFFFMeanSinglePrechange <- function(x, lambda, alpha, prechangeMean, pr
 #'
 #' Given a vector \code{x}, a threshold \code{alpha}, a step size \code{eta}, 
 #' and a burn-in length \code{BL}, returns a list containing the changepoints.
-#' Algorithm is implemented in C++.
+#' Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'
@@ -111,7 +111,7 @@ cpp_detectAFFMeanMultiple <- function(x, alpha, eta, BL) {
 #'
 #' Given a vector \code{x}, a threshold \code{alpha}, a step size \code{eta}, 
 #' and a burn-in length \code{BL}, returns a list containing the single 
-#' changepoint. Algorithm is implemented in C++.
+#' changepoint. Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #' 
@@ -137,7 +137,7 @@ cpp_detectAFFMeanSingle <- function(x, alpha, eta, BL) {
 #'
 #' Given a vector \code{x}, a threshold \code{alpha}, a step size \code{eta}, 
 #' and a burn-in length BL, returns a list containing the single changepoint.
-#' Algorithm is implemented in C++.
+#' Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'
@@ -165,7 +165,7 @@ cpp_detectAFFMeanSinglePrechange <- function(x, alpha, eta, prechangeMean, prech
 #'
 #' Given a vector \code{x}, control parameters \code{k} and \code{h},
 #' and a burn-in length \code{BL}, returns a list containing the changepoints.
-#' Algorithm is implemented in C++.
+#' Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'
@@ -175,7 +175,7 @@ cpp_detectAFFMeanSinglePrechange <- function(x, alpha, eta, prechangeMean, prech
 #'
 #' @param BL Value for the burn-in length.
 #' 
-#' @details CUSUM updates via: 
+#' @details 'CUSUM' updates via: 
 #'          \deqn{S_{j} = \max{0, S_{j-1} + (x_{j} - \mu)/ \sigma - k}}
 #'          where \eqn{\mu} and \eqn{\sigma} are, respectively, the mean 
 #'          and variance of the in-control stream, 
@@ -183,9 +183,9 @@ cpp_detectAFFMeanSinglePrechange <- function(x, alpha, eta, prechangeMean, prech
 #'          and \eqn{k} 
 #'          is a control parameter for CUSUM. Then, a change is signalled
 #'          if \eqn{S_j > h}, where \eqn{h} is the other control parameter.
-#'          This is the formulation for using CUSUM to detect an increase
+#'          This is the formulation for using 'CUSUM' to detect an increase
 #'          in the mean; there is a similar formulation for detecting a 
-#'          decrease, and usually CUSUM is two-sided (monitors for an 
+#'          decrease, and usually 'CUSUM' is two-sided (monitors for an 
 #'          increase and a decrease in the mean).
 #' 
 #' @return A list with 
@@ -203,7 +203,7 @@ cpp_detectCUSUMMeanMultiple <- function(x, k, h, BL) {
 #'
 #' Given a vector \code{x}, control parameters \code{k} and \code{h},
 #' and a burn-in length \code{BL}, returns a list containing the changepoints.
-#' Algorithm is implemented in C++.
+#' Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'
@@ -213,7 +213,7 @@ cpp_detectCUSUMMeanMultiple <- function(x, k, h, BL) {
 #'
 #' @param BL Value for the burn-in length.
 #' 
-#' @details CUSUM updates via: 
+#' @details 'CUSUM' updates via: 
 #'          \deqn{S_{j} = \max{0, S_{j-1} + (x_{j} - \mu)/ \sigma - k}}
 #'          where \eqn{\mu} and \eqn{\sigma} are, respectively, the mean 
 #'          and variance of the in-control stream, 
@@ -221,9 +221,9 @@ cpp_detectCUSUMMeanMultiple <- function(x, k, h, BL) {
 #'          and \eqn{k} 
 #'          is a control parameter for CUSUM. Then, a change is signalled
 #'          if \eqn{S_j > h}, where \eqn{h} is the other control parameter.
-#'          This is the formulation for using CUSUM to detect an increase
+#'          This is the formulation for using 'CUSUM' to detect an increase
 #'          in the mean; there is a similar formulation for detecting a 
-#'          decrease, and usually CUSUM is two-sided (monitors for an 
+#'          decrease, and usually 'CUSUM' is two-sided (monitors for an 
 #'          increase and a decrease in the mean).
 #' 
 #' @return A list with 
@@ -242,7 +242,7 @@ cpp_detectCUSUMMeanSingle <- function(x, k, h, BL) {
 #'
 #' Given a vector \code{x}, control parameters \code{k} and \code{h},
 #' and a burn-in length \code{BL}, returns a list containing the changepoints.
-#' Algorithm is implemented in C++.
+#' Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'
@@ -252,7 +252,7 @@ cpp_detectCUSUMMeanSingle <- function(x, k, h, BL) {
 #'
 #' @param BL Value for the burn-in length.
 #' 
-#' @details CUSUM updates via: 
+#' @details 'CUSUM' updates via: 
 #'          \deqn{S_{j} = \max{0, S_{j-1} + (x_{j} - \mu)/ \sigma - k}}
 #'          where \eqn{\mu} and \eqn{\sigma} are, respectively, the mean 
 #'          and variance of the in-control stream, 
@@ -260,9 +260,9 @@ cpp_detectCUSUMMeanSingle <- function(x, k, h, BL) {
 #'          and \eqn{k} 
 #'          is a control parameter for CUSUM. Then, a change is signalled
 #'          if \eqn{S_j > h}, where \eqn{h} is the other control parameter.
-#'          This is the formulation for using CUSUM to detect an increase
+#'          This is the formulation for using 'CUSUM' to detect an increase
 #'          in the mean; there is a similar formulation for detecting a 
-#'          decrease, and usually CUSUM is two-sided (monitors for an 
+#'          decrease, and usually 'CUSUM' is two-sided (monitors for an 
 #'          increase and a decrease in the mean).
 #' 
 #' @return A list with 
@@ -280,7 +280,7 @@ cpp_detectCUSUMMeanSinglePrechange <- function(x, k, h, prechangeMean, prechange
 #'
 #' Given a vector \code{x}, control parameters \code{r} and \code{L},
 #' and a burn-in length \code{BL}, returns a list containing the changepoints.
-#' Algorithm is implemented in C++.
+#' Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'
@@ -290,7 +290,7 @@ cpp_detectCUSUMMeanSinglePrechange <- function(x, k, h, prechangeMean, prechange
 #'
 #' @param BL Value for the burn-in length.
 #' 
-#' @details EWMA updates via: 
+#' @details 'EWMA' updates via: 
 #'          \deqn{Z_{j} = (1-r) Z_{j-1} + r x_{j}}
 #'          where \eqn{\mu} is the mean of the in-control stream, 
 #'          \eqn{x_j} is the observation at time \eqn{j} and \eqn{r} 
@@ -299,7 +299,7 @@ cpp_detectCUSUMMeanSinglePrechange <- function(x, k, h, prechangeMean, prechange
 #'          where \eqn{L} is the other control parameter, and 
 #'          \eqn{\sigma_{Z_j}} is a scaled version of the in-control
 #'          variance \eqn{\sigma}.
-#'          This is the formulation for using EWMA to detect an increase or
+#'          This is the formulation for using 'EWMA' to detect an increase or
 #'          decrease in the mean.
 #' 
 #' @return A list with 
@@ -317,7 +317,7 @@ cpp_detectEWMAMeanMultiple <- function(x, r, L, BL) {
 #'
 #' Given a vector \code{x}, control parameters \code{r} and \code{L},
 #' and a burn-in length \code{BL}, returns a list containing the changepoints.
-#' Algorithm is implemented in C++.
+#' Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'
@@ -327,7 +327,7 @@ cpp_detectEWMAMeanMultiple <- function(x, r, L, BL) {
 #'
 #' @param BL Value for the burn-in length.
 #' 
-#' @details EWMA updates via: 
+#' @details 'EWMA' updates via: 
 #'          \deqn{Z_{j} = (1-r) Z_{j-1} + r x_{j}}
 #'          where \eqn{\mu} is the mean of the in-control stream, 
 #'          \eqn{x_j} is the observation at time \eqn{j} and \eqn{r} 
@@ -336,7 +336,7 @@ cpp_detectEWMAMeanMultiple <- function(x, r, L, BL) {
 #'          where \eqn{L} is the other control parameter, and 
 #'          \eqn{\sigma_{Z_j}} is a scaled version of the in-control
 #'          variance \eqn{\sigma}.
-#'          This is the formulation for using EWMA to detect an increase or
+#'          This is the formulation for using 'EWMA' to detect an increase or
 #'          decrease in the mean.
 #' 
 #' @return A list with 
@@ -355,7 +355,7 @@ cpp_detectEWMAMeanSingle <- function(x, r, L, BL) {
 #'
 #' Given a vector \code{x}, control parameters \code{r} and \code{L},
 #' and a burn-in length \code{BL}, returns a list containing the changepoints.
-#' Algorithm is implemented in C++.
+#' Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'
@@ -365,7 +365,7 @@ cpp_detectEWMAMeanSingle <- function(x, r, L, BL) {
 #'
 #' @param BL Value for the burn-in length.
 #' 
-#' @details EWMA updates via: 
+#' @details 'EWMA' updates via: 
 #'          \deqn{Z_{j} = (1-r) Z_{j-1} + r x_{j}}
 #'          where \eqn{\mu} is the mean of the in-control stream, 
 #'          \eqn{x_j} is the observation at time \eqn{j} and \eqn{r} 
@@ -374,7 +374,7 @@ cpp_detectEWMAMeanSingle <- function(x, r, L, BL) {
 #'          where \eqn{L} is the other control parameter, and 
 #'          \eqn{\sigma_{Z_j}} is a scaled version of the in-control
 #'          variance \eqn{\sigma}.
-#'          This is the formulation for using EWMA to detect an increase or
+#'          This is the formulation for using 'EWMA' to detect an increase or
 #'          decrease in the mean.
 #' 
 #' @return A list with 
@@ -393,7 +393,7 @@ cpp_detectEWMAMeanSinglePrechange <- function(x, r, L, prechangeMean, prechangeS
 #' Given a vector \code{x} and a value \code{lambda} for a fixed forgetting
 #' factor, returns the value of the fixed forgetting factor mean
 #' \eqn{\bar{x}_{N, \lambda}}, where \eqn{N} is the length of \code{x}.
-#' Algorithm is implemented in C++.
+#' Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'
@@ -410,7 +410,7 @@ cpp_computeFFFMean <- function(x, lambda) {
 #' in the stochastic gradient descent for the adaptive forgetting
 #' factor, this returns the value of the fixed forgetting factor mean
 #' \eqn{\bar{x}_{N, \overrightarrow{\lambda} }}, where \eqn{N} is the 
-#' length of \code{x}. Algorithm is implemented in C++.
+#' length of \code{x}. Algorithm is implemented in 'C++'.
 #'
 #' @param x Vector of numeric values values.
 #'

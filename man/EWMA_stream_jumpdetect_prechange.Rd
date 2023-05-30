@@ -2,7 +2,7 @@
 % Please edit documentation in R/originalRcodePrechange.R
 \name{EWMA_stream_jumpdetect_prechange}
 \alias{EWMA_stream_jumpdetect_prechange}
-\title{EWMA change detection for a stream in R with known prechange parameters}
+\title{'EWMA' change detection for a stream in R with known prechange parameters}
 \usage{
 EWMA_stream_jumpdetect_prechange(stream, BL, params, mu0, sigma0)
 }
@@ -12,7 +12,7 @@ EWMA_stream_jumpdetect_prechange(stream, BL, params, mu0, sigma0)
 \item{BL}{The burn-in length - this won't actually be used, but is
 kept for historical reasons.}
 
-\item{params}{A list of parameters for the EWMA algorithm. Consists of
+\item{params}{A list of parameters for the 'EWMA' algorithm. Consists of
              \describe{
                  \item{\code{r}}{A control parameter which controls
                                  the rate of downweighting.}
@@ -30,7 +30,7 @@ in this context}
 A vector of estimated changepoints.
 }
 \description{
-Original implementation in R of EWMA change detector, but now
+Original implementation in R of 'EWMA' change detector, but now
 expecting the prechange mean and variance to be specified.
 }
 \keyword{internal}

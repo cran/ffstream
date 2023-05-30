@@ -1,6 +1,6 @@
-#' CUSUM change detection for a stream in R with known prechange parameters
+#' 'CUSUM' change detection for a stream in R with known prechange parameters
 #'
-#' Original implementation in R of CUSUM change detector, but now
+#' Original implementation in R of 'CUSUM' change detector, but now
 #' expecting the prechange mean and variance to be specified.
 #'
 #'
@@ -9,7 +9,7 @@
 #' @param BL The burn-in length - this won't actually be used, but is kept
 #'           for historical reasons.
 #'
-#' @param params A list of parameters for the CUSUM algorithm. Consists of
+#' @param params A list of parameters for the 'CUSUM' algorithm. Consists of
 #'              \describe{
 #'                  \item{\code{d}}{A control parameter also known as 
 #'                                  \eqn{k}.}
@@ -59,7 +59,7 @@ CUSUM_stream_jumpdetect_prechange <- function(stream, BL, params, mu0, sigma0){
     jump_found <- FALSE
 	while ((streampos < N) && (jump_found==FALSE)){
 		
-		#set values for CUSUM mean and variance
+		#set values for 'CUSUM' mean and variance
 		mean_j <- mu0
 		var_j <- sigma0^2
 		sd_j <- sqrt(var_j)
@@ -70,7 +70,7 @@ CUSUM_stream_jumpdetect_prechange <- function(stream, BL, params, mu0, sigma0){
 		#----------end of Phase 1: burn-in----------#
 		#--------------------------------------------------------------------#
 		#Phase 2: detect change
-		#CUSUM starts, sample from distribution 1
+		# 'CUSUM' starts, sample from distribution 1
 		S_j <- 0
 		T_j <- 0
 		isOutOfLimitsBool <- FALSE
@@ -120,13 +120,13 @@ CUSUM_stream_jumpdetect_prechange <- function(stream, BL, params, mu0, sigma0){
 	detect_pos_vec <- detect_pos_vec[1:detected_count]
 	return(detect_pos_vec)
 	
-} # end of CUSUM detect
+} # end of 'CUSUM' detect
 
 
 
-#' EWMA change detection for a stream in R with known prechange parameters
+#' 'EWMA' change detection for a stream in R with known prechange parameters
 #'
-#' Original implementation in R of EWMA change detector, but now
+#' Original implementation in R of 'EWMA' change detector, but now
 #' expecting the prechange mean and variance to be specified.
 #'
 #'
@@ -135,7 +135,7 @@ CUSUM_stream_jumpdetect_prechange <- function(stream, BL, params, mu0, sigma0){
 #' @param BL The burn-in length - this won't actually be used, but is
 #'           kept for historical reasons.
 #'
-#' @param params A list of parameters for the EWMA algorithm. Consists of
+#' @param params A list of parameters for the 'EWMA' algorithm. Consists of
 #'              \describe{
 #'                  \item{\code{r}}{A control parameter which controls
 #'                                  the rate of downweighting.}
@@ -177,11 +177,11 @@ EWMA_stream_jumpdetect_prechange <- function(stream, BL, params, mu0, sigma0){
     jump_found <- FALSE
 	while ((streampos < N) && (jump_found==FALSE)){
 		
-		#set values for EWMA mean and variance
+		#set values for 'EWMA' mean and variance
 		mu_1 <- mu0
 		sigma1_sq <- sigma0^2
 		sigma_1 <- sqrt(sigma1_sq)
-		#set EWMA control limits
+		#set 'EWMA' control limits
 		#UL: upperlimit
 		UL <- mu_1 + L * sigma_1 * delta
 		#LL: lowerlimit
@@ -234,7 +234,7 @@ EWMA_stream_jumpdetect_prechange <- function(stream, BL, params, mu0, sigma0){
 	#trim detect_pos_vec
 	detect_pos_vec <- detect_pos_vec[1:detected_count]
 	return(detect_pos_vec)	
-}#end of EWMA jump detect
+}#end of 'EWMA' jump detect
 
 
 

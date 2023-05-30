@@ -17,6 +17,9 @@ Default is \code{FALSE}.}
 \item{plotSmall}{Boolean flag; if \code{TRUE}, creates a small plot, as
 needed for the vignette. Default is \code{FALSE}.}
 }
+\value{
+Print output to screen, and plot (optional).
+}
 \description{
 Provides a demonstration of the AFF method detecting changepoints in a 
 stream.
@@ -71,7 +74,7 @@ doi:10.1007/s11222-016-9684-8
 \examples{
 df <- demo_ffstream()
 
-\dontrun{
+\donttest{
 demo_ffstream(showPlot=TRUE)
 }
 
